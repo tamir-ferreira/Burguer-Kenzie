@@ -1,13 +1,22 @@
-// import { useState } from 'react'
-// import reactLogo from "./assets/react.svg";
-import "./App.css";
+import "./styles/App.css";
+import { Header } from "./components/Header";
+import { ProductList } from "./components/ProductList";
+import { Cart } from "./components/Cart";
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <h1>App</h1>
+      <Header />
+      <main className="container">
+        <section>
+          <ProductList />
+        </section>
+        <aside>
+          <Cart />
+        </aside>
+      </main>
     </div>
   );
 }

@@ -1,0 +1,13 @@
+header {
+  background-color: var(--color-gray-0);
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+header > div {
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
