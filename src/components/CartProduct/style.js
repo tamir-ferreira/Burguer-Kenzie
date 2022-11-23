@@ -13,6 +13,10 @@ export const StyledCartProduct = styled.li`
     width: 80px;
     background-color: var(--color-gray-20);
     border-radius: var(--border-radius-2);
+
+    img {
+      width: 100%;
+    }
   }
 
   > div:nth-child(2) {
