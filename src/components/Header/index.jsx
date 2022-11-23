@@ -1,6 +1,6 @@
 // import "./style.css";
 import logo from "../../images/logo.svg";
-import { InputSearch } from "./InputSearch";
+import { InputSearch } from "../InputSearch";
 import { StyledHeader } from "./style";
 
 export const Header = () => {
