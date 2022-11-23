@@ -1,4 +1,5 @@
-import { Product } from "./Product";
+// import { Product } from "../../Product";
+import { Product } from "../Product";
 import "./style.css";
 
 export const ProductList = () => {

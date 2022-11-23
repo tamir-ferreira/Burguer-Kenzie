@@ -1,10 +1,9 @@
 import "./styles/App.css";
 import { Header } from "./components/Header";
-import { ProductList } from "./components/ProductList";
 import { Cart } from "./components/Cart";
 import { useEffect, useState } from "react";
 import { getProducts } from "./services/api";
-// import { StyledHeader } from "./components/Header/InputSearch";
+import { ProductList } from "./components/ProductList";
 
 export const App = () => {
   const [list, setList] = useState([]);
