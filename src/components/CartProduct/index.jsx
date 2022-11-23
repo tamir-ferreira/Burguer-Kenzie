@@ -1,4 +1,3 @@
-import "./style.css";
 import product from "../../images/product.png";
 import { StyledCartProduct } from "./style";
 

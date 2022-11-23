@@ -14,15 +14,12 @@ export const App = () => {
 
   return (
     <div className="App">
-      {/* <StyledHeader /> */}
       <Header />
       <main className="container">
         <section>
           <ProductList />
         </section>
-        {/* <aside> */}
         <Cart />
-        {/* </aside> */}
       </main>
     </div>
   );
