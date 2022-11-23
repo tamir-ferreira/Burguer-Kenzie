@@ -1,7 +1,7 @@
-/* import styled from "styled-components";
+import styled from "styled-components";
 
 export const StyledCartTotal = styled.div`
-  :last-child {
+  last-child {
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -15,4 +15,3 @@ export const StyledCartTotal = styled.div`
     }
   }
 `;
- */

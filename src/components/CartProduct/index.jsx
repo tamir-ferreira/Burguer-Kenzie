@@ -1,6 +1,6 @@
 import "./style.css";
 import product from "../../images/product.png";
-import { StyledCartProduct } from ".";
+import { StyledCartProduct } from "./style";
 
 export const CartProduct = () => {
   return (

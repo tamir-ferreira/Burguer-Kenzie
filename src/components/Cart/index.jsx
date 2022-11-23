@@ -1,6 +1,6 @@
 import "./style.css";
 import { CartTotal } from "../CartTotal";
-import { CartProduct } from "../CartProduct/index.jsx";
+import { CartProduct } from "../CartProduct";
 
 export const Cart = () => {
   return (
