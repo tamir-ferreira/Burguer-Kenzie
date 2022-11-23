@@ -1,10 +1,10 @@
-import "./style.css";
 import { CartTotal } from "../CartTotal";
 import { CartProduct } from "../CartProduct";
+import { StyledCart } from "./style";
 
 export const Cart = () => {
   return (
-    <>
+    <StyledCart>
       <div>
         <h4>Carrinho de compras</h4>
       </div>
@@ -18,6 +18,6 @@ export const Cart = () => {
         <CartProduct />
       </ul>
       <CartTotal />
-    </>
+    </StyledCart>
   );
 };

@@ -21,9 +21,9 @@ export const App = () => {
         <section>
           <ProductList />
         </section>
-        <aside>
-          <Cart />
-        </aside>
+        {/* <aside> */}
+        <Cart />
+        {/* </aside> */}
       </main>
     </div>
   );
