@@ -1,10 +1,10 @@
-// import { StyledHeader } from "../";
+import { StyledInputSearch } from "./style";
 
 export const InputSearch = () => {
   return (
-    <div>
+    <StyledInputSearch>
       <input type="text" placeholder="Digitar Pesquisa" />
       <button className="btn-medium btn-primary">Pesquisar</button>
-    </div>
+    </StyledInputSearch>
   );
 };

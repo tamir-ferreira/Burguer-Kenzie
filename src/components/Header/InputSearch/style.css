@@ -1,4 +1,4 @@
-header > div > div {
+/* header > div > div {
   display: flex;
   position: relative;
   align-items: center;
@@ -26,3 +26,4 @@ header > div > div > button {
   position: absolute;
   right: 10px;
 }
+ */

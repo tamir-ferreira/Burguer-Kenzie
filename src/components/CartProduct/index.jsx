@@ -1,9 +1,10 @@
 import "./style.css";
-import product from "../../../images/product.png";
+import product from "../../images/product.png";
+import { StyledCartProduct } from ".";
 
 export const CartProduct = () => {
   return (
-    <li>
+    <StyledCartProduct>
       <div>
         <img src={product} alt="" />
       </div>
@@ -12,6 +13,6 @@ export const CartProduct = () => {
         <span className="caption">Sanduíches</span>
       </div>
       <a className="caption">Remover</a>
-    </li>
+    </StyledCartProduct>
   );
 };

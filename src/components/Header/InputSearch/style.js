@@ -1,17 +1,10 @@
-/* import styled from "styled-components";
+import styled from "styled-components";
 
 export const StyledInputSearch = styled.div`
-  div {
-    div {
-      display: flex;
-      position: relative;
-      align-items: center;
-      button {
-        position: absolute;
-        right: 10px;
-      }
-    }
-  }
+  display: flex;
+  position: relative;
+  align-items: center;
+
   input {
     font-size: var(--font-size-4);
     outline: none;
@@ -25,8 +18,14 @@ export const StyledInputSearch = styled.div`
     :focus {
       border: 2px solid var(--color-gray-100);
     }
+
     ::placeholder {
       color: var(--color-gray-20);
     }
   }
-`; */
+
+  button {
+    position: absolute;
+    right: 10px;
+  }
+`;

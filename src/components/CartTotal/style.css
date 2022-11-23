@@ -1,5 +1,4 @@
 aside > div:last-child {
-  /* border: 1px solid blue; */
   display: flex;
   gap: 20px;
   flex-direction: column;
