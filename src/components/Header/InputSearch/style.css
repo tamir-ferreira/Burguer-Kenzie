@@ -1,8 +1,6 @@
 header > div > div {
-  /* display: flex; */
-  /* border: 1px solid green; */
-  position: relative;
   display: flex;
+  position: relative;
   align-items: center;
 }
 input {
@@ -26,6 +24,5 @@ input::placeholder {
 
 header > div > div > button {
   position: absolute;
-  /* top: 0; */
   right: 10px;
 }

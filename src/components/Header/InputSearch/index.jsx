@@ -1,4 +1,4 @@
-import "./style.css";
+// import { StyledHeader } from "../";
 
 export const InputSearch = () => {
   return (
