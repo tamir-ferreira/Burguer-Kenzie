@@ -6,19 +6,17 @@ import { getProducts } from "./services/api";
 import { ProductList } from "./components/ProductList";
 
 export const App = () => {
-  const [list, setList] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getProducts(setList);
+    getProducts(setProducts);
   }, []);
 
   return (
     <div className="App">
       <Header />
       <main className="container">
-        <section>
-          <ProductList />
-        </section>
+        <ProductList products={products} />
         <Cart />
       </main>
     </div>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledProduct = styled.li`
+export const StyledProducts = styled.li`
   width: 300px;
   background-color: var(--color-white);
   border: 2px solid var(--color-gray-20);

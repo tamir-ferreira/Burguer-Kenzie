@@ -5,10 +5,10 @@ const api = axios.create({
   timeout: 5000,
 });
 
-export const getProducts = async (setList) => {
+export const getProducts = async (setProducts) => {
   try {
     const response = await api.get("products");
-    setList(response.data);
+    setProducts(response.data);
   } catch (error) {
     console.error(error);
   }

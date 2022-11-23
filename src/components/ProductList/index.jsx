@@ -1,16 +1,16 @@
-// import { Product } from "../../Product";
-import { Product } from "../Product";
+import { Products } from "../Products";
 import { StyledProductList } from "./style";
-// import "./style.css";
 
-export const ProductList = () => {
+export const ProductList = ({ products }) => {
   return (
     <StyledProductList>
       <ul>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {products.map((product) => {
+          console.log("saída");
+          // <Products key={product.id} product={product} />;
+          // Products(product);
+        })}
+        <Products />
       </ul>
     </StyledProductList>
   );
