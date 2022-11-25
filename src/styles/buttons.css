@@ -18,6 +18,7 @@ button:hover {
 .btn-medium {
   height: 40px;
   font-size: var(--font-size-5);
+  width: fit-content;
 }
 
 .btn-primary {

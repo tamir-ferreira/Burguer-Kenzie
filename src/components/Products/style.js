@@ -19,7 +19,11 @@ export const StyledProducts = styled.li`
     height: 150px;
     display: flex;
     justify-content: center;
+
     background-color: var(--color-gray-0);
+    img {
+      /* object-fit: contain; */
+    }
   }
 
   > div:last-child {

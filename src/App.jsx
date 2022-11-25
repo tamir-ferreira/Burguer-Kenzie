@@ -7,6 +7,9 @@ import { ProductList } from "./components/ProductList";
 
 export const App = () => {
   const [products, setProducts] = useState([]);
+  const [cartList, setCartList] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     getProducts(setProducts);
@@ -14,10 +17,19 @@ export const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header products={products} />
       <main className="container">
-        <ProductList products={products} />
-        <Cart />
+        <ProductList
+          products={products}
+          cartList={cartList}
+          setCartList={setCartList}
+        />
+        <Cart
+          cartList={cartList}
+          setCartList={setCartList}
+          total={total}
+          setTotal={setTotal}
+        />
       </main>
     </div>
   );

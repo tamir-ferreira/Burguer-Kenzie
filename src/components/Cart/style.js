@@ -9,8 +9,11 @@ export const StyledCart = styled.aside`
     padding-left: 20px;
     height: 65px;
     background-color: var(--color-primary);
-    color: var(--color-white);
     border-radius: var(--border-radius-2) var(--border-radius-2) 0 0;
+
+    h4 {
+      color: var(--color-white);
+    }
   }
 
   > div:nth-child(2) {
@@ -21,7 +24,6 @@ export const StyledCart = styled.aside`
     align-items: center;
     height: 158px;
     background-color: var(--color-gray-0);
-    display: none;
   }
 
   ul {

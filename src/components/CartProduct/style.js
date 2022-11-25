@@ -26,7 +26,7 @@ export const StyledCartProduct = styled.li`
     gap: 10px;
   }
 
-  > a {
+  > button {
     position: absolute;
     top: 10px;
     right: 10px;
