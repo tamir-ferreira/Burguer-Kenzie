@@ -4,7 +4,6 @@ export const CartProduct = ({ item, cartList, setCartList }) => {
   const { img, name, category } = item;
 
   const removeItem = () => {
-    // console.log(cartList);
     const updatedList = cartList.filter((product) => product.id != item.id);
     setCartList(updatedList);
   };

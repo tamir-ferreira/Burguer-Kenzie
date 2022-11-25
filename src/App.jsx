@@ -14,13 +14,13 @@ export const App = () => {
   useEffect(() => {
     getProducts(setProducts);
   }, []);
-
+  // console.log(filteredProducts);
   return (
     <div className="App">
-      <Header products={products} />
+      <Header products={products} setFilteredProducts={setFilteredProducts} />
       <main className="container">
         <ProductList
-          products={products}
+          products={filteredProducts != "" ? filteredProducts : products}
           cartList={cartList}
           setCartList={setCartList}
         />
