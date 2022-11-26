@@ -20,10 +20,13 @@ export const StyledCartProduct = styled.li`
   }
 
   > div:nth-child(2) {
+    height: 100%;
     display: flex;
     flex-direction: column;
     padding: 10px 0 0 10px;
     gap: 10px;
+    text-align: left;
+    align-items: flex-start;
   }
 
   > button {
@@ -34,6 +37,15 @@ export const StyledCartProduct = styled.li`
     :hover {
       cursor: pointer;
       text-decoration: underline;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    > div:nth-child(2) > h4 {
+      width: 110px;
+    }
+    > button {
+      padding: 0;
     }
   }
 `;

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyledCart = styled.aside`
-  width: 365px;
+  max-width: 365px;
+  width: 100%;
 
   > div:first-child {
     display: flex;
@@ -28,11 +29,27 @@ export const StyledCart = styled.aside`
 
   ul {
     width: 100%;
+    max-height: 320px;
     background-color: var(--color-gray-0);
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px 10px;
-    border-bottom: 2px solid var(--color-gray-20);
+    overflow-y: auto;
+  }
+  @media only screen and (max-width: 600px) {
+    main {
+      width: 100%;
+      padding: 16px;
+      /* align-items: center; */
+      /* justify-content: center; */
+      /* overflow-x: none; */
+      flex-direction: column;
+      /* flex-wrap: nowrap; */
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    max-width: 100%;
   }
 `;

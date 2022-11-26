@@ -1,7 +1,8 @@
 import { StyledCartTotal } from "./style";
 
-export const CartTotal = ({ total, setCartList }) => {
-  const formatedTotal = total.toLocaleString("pt-br", {
+export const CartTotal = ({ setCartList, cartList }) => {
+  const cartSum = cartList.reduce((acc, current) => acc + current.price, 0);
+  const formatedTotal = cartSum.toLocaleString("pt-br", {
     style: "currency",
     currency: "BRL",
   });

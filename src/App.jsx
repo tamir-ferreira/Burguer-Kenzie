@@ -1,4 +1,6 @@
-import "./styles/App.css";
+import "react-toastify/dist/ReactToastify.css";
+import React from "react";
+import { ToastContainer } from "react-toastify";
 import { Header } from "./components/Header";
 import { Cart } from "./components/Cart";
 import { useEffect, useState } from "react";
@@ -8,15 +10,23 @@ import { ProductList } from "./components/ProductList";
 export const App = () => {
   const [products, setProducts] = useState([]);
   const [cartList, setCartList] = useState([]);
-  const [total, setTotal] = useState(0);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     getProducts(setProducts);
   }, []);
-  // console.log(filteredProducts);
+
   return (
     <div className="App">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        rtl={false}
+        draggable={false}
+        theme="colored"
+      />
       <Header products={products} setFilteredProducts={setFilteredProducts} />
       <main className="container">
         <ProductList
@@ -27,8 +37,8 @@ export const App = () => {
         <Cart
           cartList={cartList}
           setCartList={setCartList}
-          total={total}
-          setTotal={setTotal}
+          // total={total}
+          // setTotal={setTotal}
         />
       </main>
     </div>

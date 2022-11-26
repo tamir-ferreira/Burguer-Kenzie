@@ -1,12 +1,16 @@
 import { StyledProducts } from "./style";
+import { toast } from "react-toastify";
 
 export const Products = ({ product, cartList, setCartList }) => {
   const handleClick = () => {
     const duplicatedItem = cartList.some((item) => item.id === product.id);
 
-    duplicatedItem
-      ? console.log("item duplicado")
-      : setCartList([...cartList, product]);
+    if (!duplicatedItem) {
+      setCartList([...cartList, product]);
+      toast.success("Enviado para o carrinho!");
+    } else {
+      toast.error("Produto já está no carrinho!");
+    }
   };
 
   return (
