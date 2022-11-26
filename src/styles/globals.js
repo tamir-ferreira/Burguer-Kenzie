@@ -12,6 +12,30 @@ export const StyledGlobals = createGlobalStyle`
     --border-radius-2: 5px;
   }
 
+  .input-focus {
+    border-color: var(--color-gray-100);
+  }
+
+  .resize-img {
+    /* border: 2px solid red; */
+    transform: scale(1.5) translateY(-20px);
+  }
+
+  .resize-img-cart {
+    /* border: 2px solid red; */
+    transform: scale(1.5) translateY(-10px);
+  }
+
+  .adjust-img {
+    /* border: 2px solid red; */
+    transform: translateY(-10px);
+  }
+  
+  .adjust-img-cart {
+    /* border: 2px solid red; */
+    transform: translateY(-5px);
+  }
+
   body {
     color: var(--color-gray-100);
   }

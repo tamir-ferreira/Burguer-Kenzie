@@ -11,7 +11,6 @@ export const StyledInputSearch = styled.form`
   border-radius: var(--border-radius-1);
   background-color: var(--color-white);
   padding: 0 10px;
-  /* margin: 16px 16px; */
 
   input {
     font-size: var(--font-size-4);
@@ -27,17 +26,16 @@ export const StyledInputSearch = styled.form`
     }
   }
 
+  /*  .input-focus {
+    background-color: red;
+    border-color: var(--color-gray-100);
+  } */
+
   @media only screen and (max-width: 600px) {
-    /* width: 100%; */
-    /* margin: 0 16px; */
     margin: 16px 16px;
     padding: 0 10px 0 0;
     input {
       width: 100%;
     }
-    /*  button {
-      position: absolute;
-      right: 16px;
-    } */
   }
 `;

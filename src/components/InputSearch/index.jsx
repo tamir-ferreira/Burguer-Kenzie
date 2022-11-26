@@ -32,12 +32,8 @@ export const InputSearch = ({ products, setFilteredProducts }) => {
       <input
         type="text"
         placeholder="Digitar Pesquisa"
-        onFocus={() =>
-          (formRef.current.style.borderColor = "var(--color-gray-100")
-        }
-        onBlur={() =>
-          (formRef.current.style.borderColor = "var(--color-gray-20)")
-        }
+        onFocus={() => formRef.current.classList.add("input-focus")}
+        onBlur={() => formRef.current.classList.remove("input-focus")}
         onChange={(event) => !event.target.value && setFilteredProducts([])}
         required
       />

@@ -37,6 +37,7 @@ export const StyledCart = styled.aside`
     padding: 20px 10px;
     overflow-y: auto;
   }
+
   @media only screen and (max-width: 600px) {
     main {
       width: 100%;

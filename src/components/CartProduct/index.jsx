@@ -10,7 +10,17 @@ export const CartProduct = ({ item, cartList, setCartList }) => {
   return (
     <StyledCartProduct>
       <div>
-        <img src={img} alt={name} />
+        <img
+          src={img}
+          alt={name}
+          className={
+            name.includes("Coca") || name.includes("Guaraná")
+              ? "resize-img-cart"
+              : name.includes("Ovomaltine")
+              ? "adjust-img-cart"
+              : ""
+          }
+        />
       </div>
       <div>
         <h4 className="font-heading-4">{name}</h4>
