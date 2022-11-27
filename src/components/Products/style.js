@@ -14,19 +14,14 @@ export const StyledProducts = styled.li`
   :hover {
     box-shadow: 0 0 0.9375rem var(--color-gray-100);
 
-    img {
-      scale: 1.5;
+    img:not(.resize-img, .adjust-img) {
+      animation: img-pulse 1s linear infinite forwards;
     }
 
     div:first-child {
       background-color: var(--color-gray-20);
       overflow: hidden;
     }
-  }
-
-  img {
-    transition: 0.7s ease;
-    object-fit: cover;
   }
 
   > div:first-child {
@@ -48,6 +43,17 @@ export const StyledProducts = styled.li`
 
     > button {
       margin-top: 0.625rem;
+    }
+  }
+  @keyframes img-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
     }
   }
 

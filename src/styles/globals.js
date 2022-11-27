@@ -20,12 +20,23 @@ export const StyledGlobals = createGlobalStyle`
     transform: scale(1.5) translateY(-1.25rem);
   }
 
+  li:hover .resize-img{
+    animation: anim-resize-img 1s linear infinite forwards;
+  } 
+
+  li:hover .adjust-img{
+    animation: anim-adjust-img 1s linear infinite forwards;
+  } 
+
   .resize-img-cart {
     transform: scale(1.5) translateY(-0.625rem);
   }
 
   .adjust-img {
     transform: translateY(-0.625rem);
+    hover{
+      animation: anim-adjust-image 1s linear infinite forwards;
+    }
   }
   
   .adjust-img-cart {
@@ -40,6 +51,8 @@ export const StyledGlobals = createGlobalStyle`
     padding-top: 2rem;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    gap: 60px;
   }
 
   ul {
@@ -62,6 +75,32 @@ export const StyledGlobals = createGlobalStyle`
       padding: 1rem;
       flex-direction: column;
       text-align: center;
+    }
+  }
+
+  @keyframes anim-adjust-img {
+    0% {
+      transform: scale(1) translateY(-0.625rem);
+     
+    }
+    50% {
+      transform: scale(1.2) translateY(-0.625rem);
+    }
+    100% {
+      transform: scale(1) translateY(-0.625rem);
+    }
+  
+  }
+  @keyframes anim-resize-img {
+    0% {
+      transform: scale(1.5) translateY(-1.25rem);
+     
+    }
+    50% {
+      transform: scale(1.8) translateY(-1.25rem);
+    }
+    100% {
+      transform: scale(1.5) translateY(-1.25rem);
     }
   }
 

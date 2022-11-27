@@ -50,6 +50,7 @@ export const StyledCartProduct = styled.li`
     > div:nth-child(2) > h4 {
       width: 6.875rem;
     }
+
     > button {
       padding: 0;
     }

@@ -2,27 +2,40 @@ import { StyledInputSearch } from "./style";
 import { toast } from "react-toastify";
 import { useRef } from "react";
 
-export const InputSearch = ({ products, setFilteredProducts }) => {
+export const InputSearch = ({
+  setWordSearch,
+  products,
+  setFilteredProducts,
+}) => {
   const formRef = useRef(null);
   const findProduct = (event) => {
     event.preventDefault();
-    const wordSearch = event.target[0].value.toLowerCase();
+    const search = event.target[0].value.toLowerCase();
 
     const filteredList = products.filter((item) => {
       return (
-        item.category.toLowerCase().includes(wordSearch) ||
-        item.name.toLowerCase().includes(wordSearch)
+        item.category.toLowerCase().includes(search) ||
+        item.name.toLowerCase().includes(search)
       );
     });
 
     if (filteredList.length > 0) {
       setFilteredProducts(filteredList);
+      setWordSearch(search);
       filteredList.length == 1
         ? toast.success("1 produto encontrado!")
         : toast.success(`${filteredList.length} produtos encontrados!`);
     } else {
       setFilteredProducts([]);
-      toast.error(`Nenhum produto encontrado com "${wordSearch}" !`);
+      setWordSearch("");
+      toast.error(`Nenhum produto encontrado com "${search}" !`);
+    }
+  };
+
+  const hideResults = (event) => {
+    if (!event.target.value) {
+      setWordSearch("");
+      setFilteredProducts([]);
     }
   };
 
@@ -33,7 +46,7 @@ export const InputSearch = ({ products, setFilteredProducts }) => {
         placeholder="Digitar Pesquisa"
         onFocus={() => formRef.current.classList.add("input-focus")}
         onBlur={() => formRef.current.classList.remove("input-focus")}
-        onChange={(event) => !event.target.value && setFilteredProducts([])}
+        onChange={(event) => hideResults(event)}
         required
       />
       <button className="btn-medium btn-primary">Pesquisar</button>

@@ -26,16 +26,17 @@ export const StyledTypography = createGlobalStyle`
       --font-weigth-3: 400;
     }
 
-  .font-heading-1 {
-    font-size: var(--font-size-1);
-    font-weight: var(--font-weigth-1);
+    .font-heading-1 {
+      font-size: var(--font-size-1);
+      font-weight: var(--font-weigth-1);
   }
 
+  
   .font-heading-2 {
     font-size: var(--font-size-2);
     font-weight: var(--font-weigth-1);
   }
-
+  
   .font-heading-3 {
     font-size: var(--font-size-3);
     font-weight: var(--font-weigth-1);
@@ -45,32 +46,36 @@ export const StyledTypography = createGlobalStyle`
     font-size: var(--font-size-5);
     font-weight: var(--font-weigth-1);
   }
-
+  
   .font-headline {
     font-size: var(--font-size-4);
     font-weight: var(--font-weigth-3);
   }
-
+  
   .font-body {
     font-size: var(--font-size-5);
     font-weight: var(--font-weigth-3);
   }
-
+  
   .font-body-600 {
     font-size: var(--font-size-5);
     font-weight: var(--font-weigth-2);
     color: var(--color-primary);
   }
-
+  
   .font-body-600-gray {
     font-size: var(--font-size-5);
     font-weight: var(--font-weigth-2);
     color: var(--color-gray-50);
   }
-
+  
+  .font-gray {
+    color: var(--color-gray-50);
+  }
+  
   .caption {
     font-size: var(--font-size-6);
     font-weight: var(--font-weigth-3);
     color: var(--color-gray-50);
   }
-`;
+  `;

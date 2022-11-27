@@ -8,10 +8,10 @@ import { getProducts } from "./services/api";
 import { ProductList } from "./components/ProductList";
 
 export const App = () => {
+  const [wordSearch, setWordSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [cartList, setCartList] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
   useEffect(() => {
     getProducts(setProducts);
   }, []);
@@ -27,10 +27,17 @@ export const App = () => {
         draggable={false}
         theme="colored"
       />
-      <Header products={products} setFilteredProducts={setFilteredProducts} />
-      <main className="container">
+      <Header
+        setWordSearch={setWordSearch}
+        products={products}
+        setFilteredProducts={setFilteredProducts}
+      />
+      <main className={"container"}>
         <ProductList
-          products={filteredProducts != "" ? filteredProducts : products}
+          wordSearch={wordSearch}
+          setWordSearch={setWordSearch}
+          products={filteredProducts.length != 0 ? filteredProducts : products}
+          setFilteredProducts={setFilteredProducts}
           cartList={cartList}
           setCartList={setCartList}
         />
