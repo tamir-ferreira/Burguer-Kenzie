@@ -14,12 +14,12 @@ export const StyledTypography = createGlobalStyle`
     :root {
       --font-family-1: "Inter", sans-serif;
 
-      --font-size-1: 26px;
-      --font-size-2: 22px;
-      --font-size-3: 18px;
-      --font-size-4: 16px;
-      --font-size-5: 14px;
-      --font-size-6: 12px;
+      --font-size-1: 1.625rem;
+      --font-size-2: 1.375rem;
+      --font-size-3: 1.125rem;
+      --font-size-4: 1rem;
+      --font-size-5: .875rem;
+      --font-size-6: .75rem;
 
       --font-weigth-1: 700;
       --font-weigth-2: 600;

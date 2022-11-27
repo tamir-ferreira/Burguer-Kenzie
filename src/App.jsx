@@ -34,12 +34,7 @@ export const App = () => {
           cartList={cartList}
           setCartList={setCartList}
         />
-        <Cart
-          cartList={cartList}
-          setCartList={setCartList}
-          // total={total}
-          // setTotal={setTotal}
-        />
+        <Cart cartList={cartList} setCartList={setCartList} />
       </main>
     </div>
   );

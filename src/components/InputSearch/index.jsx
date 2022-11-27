@@ -1,5 +1,4 @@
 import { StyledInputSearch } from "./style";
-
 import { toast } from "react-toastify";
 import { useRef } from "react";
 

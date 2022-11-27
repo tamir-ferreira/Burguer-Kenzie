@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledCartProduct = styled.li`
   width: 100%;
-  height: 80px;
+  height: 5rem;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -11,19 +11,17 @@ export const StyledCartProduct = styled.li`
   animation: in-cart 0.5s ease-in-out;
 
   :hover {
-    /* background-color: red; */
-    box-shadow: 0 0 15px var(--color-gray-50);
+    box-shadow: 0 0 0.9375rem var(--color-gray-50);
   }
 
   > div:first-child {
     height: 100%;
-    width: 80px;
+    width: 5rem;
     background-color: var(--color-gray-20);
     border-radius: var(--border-radius-2);
 
     img {
       width: 100%;
-      /* object-fit: scale-down; */
     }
   }
 
@@ -31,16 +29,16 @@ export const StyledCartProduct = styled.li`
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px 0 0 10px;
-    gap: 10px;
+    padding: 0.625rem 0 0 0.625rem;
+    gap: 0.625rem;
     text-align: left;
     align-items: flex-start;
   }
 
   > button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0.625rem;
+    right: 0.625rem;
 
     :hover {
       cursor: pointer;
@@ -48,9 +46,9 @@ export const StyledCartProduct = styled.li`
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 37.5rem) {
     > div:nth-child(2) > h4 {
-      width: 110px;
+      width: 6.875rem;
     }
     > button {
       padding: 0;
@@ -59,16 +57,11 @@ export const StyledCartProduct = styled.li`
 
   @keyframes in-cart {
     0% {
-      /* transform: scale(0) rotate(180deg); */
-      transform: translateY(-100px);
+      transform: translateY(-6.25rem);
       opacity: 0;
     }
-    80% {
-      /* transform: scale(110%); */
-    }
     100% {
-      /* transform: scale(100%) rotate(0deg); */
-      transform: translateY(0px);
+      transform: translateY(0rem);
       opacity: 1;
     }
   }

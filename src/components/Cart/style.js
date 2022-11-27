@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const StyledCart = styled.aside`
-  max-width: 365px;
+  max-width: 22.8125rem;
   width: 100%;
 
   > div:first-child {
     display: flex;
     align-items: center;
-    padding-left: 20px;
-    height: 65px;
+    padding-left: 1.25rem;
+    height: 4.0625rem;
     background-color: var(--color-primary);
     border-radius: var(--border-radius-2) var(--border-radius-2) 0 0;
 
@@ -21,36 +21,30 @@ export const StyledCart = styled.aside`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    gap: 0.9375rem;
     align-items: center;
-    height: 158px;
+    height: 9.875rem;
     background-color: var(--color-gray-0);
   }
 
   ul {
     width: 100%;
-    max-height: 320px;
+    max-height: 20rem;
     background-color: var(--color-gray-0);
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px 10px;
+    gap: 1.25rem;
+    padding: 1.25rem 0.625rem;
     overflow-y: auto;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 37.5rem) {
+    max-width: 100%;
     main {
       width: 100%;
-      padding: 16px;
-      /* align-items: center; */
-      /* justify-content: center; */
-      /* overflow-x: none; */
+      padding: 1rem;
       flex-direction: column;
-      /* flex-wrap: nowrap; */
       text-align: center;
     }
-  }
-  @media only screen and (max-width: 600px) {
-    max-width: 100%;
   }
 `;
