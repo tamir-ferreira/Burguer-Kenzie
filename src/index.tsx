@@ -6,7 +6,7 @@ import { StyledColors } from "./styles/colors";
 import { StyledButtons } from "./styles/buttons";
 import { StyledTypography } from "./styles/typography";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <StyledGlobals />
     <StyledColors />

@@ -3,6 +3,7 @@ import { CartProduct } from "../CartProduct";
 import { StyledCart } from "./style";
 
 export const Cart = ({ cartList, setCartList }) => {
+  console.log(cartList);
   return (
     <StyledCart>
       <div>

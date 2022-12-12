@@ -1,5 +1,4 @@
 import "react-toastify/dist/ReactToastify.css";
-import React from "react";
 import { ToastContainer } from "react-toastify";
 import { Header } from "./components/Header";
 import { Cart } from "./components/Cart";
@@ -7,9 +6,19 @@ import { useEffect, useState } from "react";
 import { getProducts } from "./services/api";
 import { ProductList } from "./components/ProductList";
 
+interface iCartList {}
+
+export interface iProducts {
+  id: number;
+  name: string;
+  category: string;
+  price: number;
+  img: string;
+}
+
 export const App = () => {
   const [wordSearch, setWordSearch] = useState("");
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<iProducts | []>([]);
   const [cartList, setCartList] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   useEffect(() => {
