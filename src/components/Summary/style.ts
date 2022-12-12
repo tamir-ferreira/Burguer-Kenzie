@@ -1,6 +1,7 @@
 import styled from "styled-components";
 export const StyledSummary = styled.section`
-  width: 100%;
+  width: 377px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8,7 +9,7 @@ export const StyledSummary = styled.section`
   align-items: flex-start;
 
   div {
-    width: 377px;
+    width: 100%;
     border: 1px solid var(--color-gray-20);
     box-shadow: 0px 4px 40px -20px rgba(0, 0, 0, 0.25);
     border-radius: var(--border-radius-2);
