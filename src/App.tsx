@@ -5,8 +5,7 @@ import { Cart } from "./components/Cart";
 import { useEffect, useState } from "react";
 import { getProducts } from "./services/api";
 import { ProductList } from "./components/ProductList";
-
-interface iCartList {}
+import { Login } from "./pages/login";
 
 export interface iProducts {
   id: number;
@@ -36,22 +35,7 @@ export const App = () => {
         draggable={false}
         theme="colored"
       />
-      <Header
-        setWordSearch={setWordSearch}
-        products={products}
-        setFilteredProducts={setFilteredProducts}
-      />
-      <main className={"container"}>
-        <ProductList
-          wordSearch={wordSearch}
-          setWordSearch={setWordSearch}
-          products={filteredProducts.length != 0 ? filteredProducts : products}
-          setFilteredProducts={setFilteredProducts}
-          cartList={cartList}
-          setCartList={setCartList}
-        />
-        <Cart cartList={cartList} setCartList={setCartList} />
-      </main>
+      <Login />
     </div>
   );
 };
