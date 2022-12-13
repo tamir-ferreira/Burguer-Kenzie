@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 // import { iProducts } from "../App";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: "https://hamburgueria-kenzie-v2.herokuapp.com",
   timeout: 5000,
 });
@@ -10,10 +10,11 @@ const api = axios.create({
 /* export const getProducts = async (
   setProducts: React.Dispatch<React.SetStateAction<iProducts | []>>
 ) => { */
-export const getProducts = async (setProducts) => {
+export const getProducts = async () => {
   try {
-    const response = await api.get("/products");
-    setProducts(response.data);
+    const { data } = await api.get("/products");
+
+    return data;
   } catch (error) {
     console.error(error);
   }
@@ -38,13 +39,13 @@ export const loginUser = async (body) => {
   try {
     const { status, data } = await api.post("/login", body);
 
-    status === 200 && toast.success("Usuário logado com Sucesso!");
+    status === 200 &&
+      // ((api.defaults.headers.common.authorization = `Bearer ${data.accessToken}`),
+      toast.success("Usuário logado com Sucesso!");
 
     return data;
   } catch (error) {
-    console.log(error);
     const message = error.response.data;
-
     message === "Incorrect password" && toast.error("Senha inválida!");
     message === "Cannot find user" && toast.error("Usuário não encontrado!");
     return false;

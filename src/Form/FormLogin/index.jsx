@@ -5,10 +5,14 @@ import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { StyledForm } from "../style";
 import { loginSchema } from "./loginSchema";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import { loginUser } from "../../services/api";
 
 export const FormLogin = () => {
-  const navigate = useNavigate();
+  const { loginSubmit } = useContext(UserContext);
+  // const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -18,18 +22,26 @@ export const FormLogin = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const loginSubmit = async (data) => {
+  /* const loginSubmit = async (data) => {
     const response = await loginUser(data);
 
-    response
-      ? (localStorage.setItem("@TOKEN", response.accessToken),
-        localStorage.setItem("@USER", JSON.stringify(response.user)),
-        navigate("/dashboard"))
-      : localStorage.clear();
+    if (response) {
+      const { user, accessToken } = response;
+      localStorage.setItem("@TOKEN", accessToken);
+      localStorage.setItem("@USER", JSON.stringify(user));
+      navigate("/dashboard");
+    } else {
+      localStorage.clear();
+    }
+  }; */
+
+  const teste = async (data) => {
+    console.log(data);
+    await loginSubmit(data);
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit(loginSubmit)} noValidate>
+    <StyledForm onSubmit={handleSubmit(teste)} noValidate>
       <h3 className="font-heading-3">Login</h3>
       <Input
         type="email"

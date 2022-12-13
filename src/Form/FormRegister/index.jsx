@@ -1,15 +1,15 @@
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { StyledForm } from "../style";
-
 import { registerSchema } from "./registerSchema";
-import { createUser } from "../../services/api";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 export const FormRegister = () => {
-  const navigate = useNavigate();
+  const { registerSubmit } = useContext(UserContext);
 
   const {
     register,
@@ -20,21 +20,8 @@ export const FormRegister = () => {
     resolver: yupResolver(registerSchema),
   });
 
-  const registerSubmit = async (data) => {
-    const body = {
-      name: data.name,
-      email: data.email,
-      password: data.password,
-    };
-
-    const response = await createUser(body);
-
-    response && navigate("/login");
-    // console.log(body);
-  };
-
   return (
-    <StyledForm onSubmit={handleSubmit(registerSubmit)}>
+    <StyledForm onSubmit={handleSubmit(registerSubmit)} noValidate>
       <div>
         <h3 className="font-heading-3">Cadastro</h3>
         <Link to={"/"}>
