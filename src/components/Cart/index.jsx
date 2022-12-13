@@ -1,8 +1,11 @@
 import { CartTotal } from "../CartTotal";
 import { CartProduct } from "../CartProduct";
 import { StyledCart } from "./style";
+import { useContext } from "react";
+import { ProductContext } from "../../context/ProductContext";
 
-export const Cart = ({ cartList, setCartList }) => {
+export const Cart = () => {
+  const { cartList, setCartList } = useContext(ProductContext);
   console.log(cartList);
   return (
     <StyledCart>

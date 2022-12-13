@@ -1,5 +1,6 @@
 import styled from "styled-components";
-export const StyledSummary = styled.section`
+
+export const StyledPreface = styled.section`
   width: 377px;
 
   display: flex;

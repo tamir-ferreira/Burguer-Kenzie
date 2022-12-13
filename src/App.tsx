@@ -8,6 +8,7 @@ import { getProducts } from "./services/api";
 import { ProductList } from "./components/ProductList";
 import { LoginPage } from "./pages/login";
 import { PageRoutes } from "./routes";
+import { ProductProvider } from "./context/ProductContext";
 
 /* export interface iProducts {
   id: number;
@@ -18,14 +19,14 @@ import { PageRoutes } from "./routes";
 } */
 
 export const App = () => {
-  const [wordSearch, setWordSearch] = useState("");
-  /*  const [products, setProducts] = (useState < iProducts) | ([] > []); */
-  const [products, setProducts] = useState([]);
-  const [cartList, setCartList] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  useEffect(() => {
+  // const [wordSearch, setWordSearch] = useState("");
+  // const [products, setProducts] = useState<iProducts | []>([]);
+  // const [products, setProducts] = useState([]);
+  // const [cartList, setCartList] = useState([]);
+  // const [filteredProducts, setFilteredProducts] = useState([]);
+  /* useEffect(() => {
     getProducts(setProducts);
-  }, []);
+  }, []); */
 
   return (
     <div className="App">
@@ -39,7 +40,9 @@ export const App = () => {
           draggable={false}
           theme="colored"
         />
-        <PageRoutes />
+        <ProductProvider>
+          <PageRoutes />
+        </ProductProvider>
       </BrowserRouter>
     </div>
   );

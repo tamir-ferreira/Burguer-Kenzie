@@ -1,11 +1,11 @@
 import logo from "../../images/logo.svg";
 import item from "../../images/item.svg";
 import elipses from "../../images/elipses.svg";
-import { StyledSummary } from "./style";
+import { StyledPreface } from "./style";
 
-export const Summary = () => {
+export const Preface = () => {
   return (
-    <StyledSummary>
+    <StyledPreface>
       <img src={logo} alt="logotipo burguer kenzie" />
       <div>
         <img src={item} alt="icone quadrado verde" />
@@ -15,6 +15,6 @@ export const Summary = () => {
         </p>
       </div>
       <img src={elipses} alt="diversos círculos pequenos" />
-    </StyledSummary>
+    </StyledPreface>
   );
 };

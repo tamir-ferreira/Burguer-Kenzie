@@ -1,8 +1,12 @@
+import { useContext } from "react";
+import { ProductContext } from "../../context/ProductContext";
 import logo from "../../images/logo.svg";
 import { InputSearch } from "../InputSearch";
 import { StyledHeader } from "./style";
 
-export const Header = ({ setWordSearch, products, setFilteredProducts }) => {
+export const Header = () => {
+  const { setWordSearch, products, setFilteredProducts } =
+    useContext(ProductContext);
   return (
     <StyledHeader>
       <div className="container">

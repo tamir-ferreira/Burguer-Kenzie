@@ -1,12 +1,12 @@
 import { FormLogin } from "../../Form/FormLogin";
 import { StyledLogin } from "./style";
-import { Summary } from "../../components/Summary";
+import { Preface } from "../../components/Preface";
 
 export const LoginPage = () => {
   return (
     <StyledLogin>
       <FormLogin />
-      <Summary />
+      <Preface />
     </StyledLogin>
   );
 };

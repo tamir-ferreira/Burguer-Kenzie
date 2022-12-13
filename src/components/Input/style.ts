@@ -4,7 +4,9 @@ export const StyledInput = styled.fieldset`
   height: 60px;
   border-radius: var(--border-radius-1);
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 3px;
 
   input:focus ~ legend {
     margin-left: 10px;
