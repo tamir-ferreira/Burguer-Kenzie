@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
+import { Button } from "../Button";
 import { Products } from "../Products";
 import { StyledProductList } from "./style";
 
@@ -18,15 +19,15 @@ export const ProductList = ({ products }) => {
           <h2 className="font-heading-1">
             Resultados para: <span className="font-gray"> {wordSearch} </span>
           </h2>
-          <button
-            className="btn-medium btn-primary"
+          <Button
+            size="medium"
+            color="primary"
+            content="Limpar busca"
             onClick={() => {
               setWordSearch("");
               setFilteredProducts([]);
             }}
-          >
-            Limpar busca
-          </button>
+          />
         </div>
       )}
       <ul>

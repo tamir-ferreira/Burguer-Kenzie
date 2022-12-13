@@ -1,5 +1,6 @@
 import { StyledProducts } from "./style";
 import { toast } from "react-toastify";
+import { Button } from "../Button";
 
 export const Products = ({ product, cartList, setCartList }) => {
   const { img, name, category, price } = product;
@@ -37,9 +38,12 @@ export const Products = ({ product, cartList, setCartList }) => {
         <h3 className="font-heading-3">{name}</h3>
         <span className="caption">{category}</span>
         <h4 className="font-body-600">{formatedPrice}</h4>
-        <button className="btn-medium btn-primary" onClick={() => addProduct()}>
-          Adicionar
-        </button>
+        <Button
+          size="medium"
+          color="primary"
+          content="Adicionar"
+          onClick={() => addProduct()}
+        />
       </div>
     </StyledProducts>
   );

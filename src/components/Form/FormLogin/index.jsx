@@ -1,13 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
+import { Button } from "../../Button";
+import { Input } from "../../Input";
 import { StyledForm } from "../style";
 import { loginSchema } from "./loginSchema";
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
-import { loginUser } from "../../services/api";
+import { UserContext } from "../../../context/UserContext";
+import { loginUser } from "../../../services/api";
 
 export const FormLogin = () => {
   const { loginSubmit } = useContext(UserContext);

@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const StyledCart = styled.aside`
   max-width: 22.8125rem;
+  height: fit-content;
   width: 100%;
+  box-shadow: 0px 5px 30px -10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius-2);
 
   > div:first-child {
     display: flex;
@@ -30,7 +33,7 @@ export const StyledCart = styled.aside`
   ul {
     width: 100%;
     max-height: 20rem;
-    background-color: var(--color-gray-0);
+    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     gap: 1.25rem;

@@ -26,6 +26,7 @@ export const CartProduct = ({ item, cartList, setCartList }) => {
         <h4 className="font-heading-4">{name}</h4>
         <span className="caption">{category}</span>
       </div>
+
       <button className="caption" onClick={() => removeItem()}>
         Remover
       </button>

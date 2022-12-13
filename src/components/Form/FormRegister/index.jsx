@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
+import { Button } from "../../Button";
+import { Input } from "../../Input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { StyledForm } from "../style";
 import { registerSchema } from "./registerSchema";
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../../context/UserContext";
 
 export const FormRegister = () => {
   const { registerSubmit } = useContext(UserContext);

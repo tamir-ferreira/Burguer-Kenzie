@@ -1,4 +1,4 @@
-import { FormLogin } from "../../Form/FormLogin";
+import { FormLogin } from "../../components/Form/FormLogin";
 import { StyledLogin } from "./style";
 import { Preface } from "../../components/Preface";
 
