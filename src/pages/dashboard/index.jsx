@@ -1,38 +1,18 @@
-import { useContext, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+// import { useNavigate } from "react-router-dom";
 import { Cart } from "../../components/Cart";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { ProductContext } from "../../context/ProductContext";
-import { api, getProducts } from "../../services/api";
+import { UserContext } from "../../context/UserContext";
+// import { api, getProducts } from "../../services/api";
 
 export const DashboardPage = () => {
-  const { products, setProducts, filteredProducts } =
-    useContext(ProductContext);
-  const navigate = useNavigate();
+  const { loadUser } = useContext(UserContext);
+  const { products, filteredProducts } = useContext(ProductContext);
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    const loadProducts = async () => {
-      const token = localStorage.getItem("@TOKEN");
-      api.defaults.headers.common.authorization = `Bearer ${token}`;
-
-      if (!token) {
-        setWaitUser(false);
-        return;
-      }
-
-      const response = await getProducts();
-
-      response ? setProducts(response) : (navigate("/"), localStorage.clear());
-    };
-
-    loadProducts();
-    /* return () => {
-      
-    } */
-  }, []);
-
-  return (
+  return !loadUser ? (
     <>
       <Header />
       <main className={"container"}>
@@ -42,5 +22,9 @@ export const DashboardPage = () => {
         <Cart />
       </main>
     </>
+  ) : (
+    <div className="container-loader2">
+      <span className="loader2"></span>
+    </div>
   );
 };

@@ -44,8 +44,8 @@ export const loginUser = async (body) => {
     const { status, data } = await api.post("/login", body);
 
     status === 200 &&
-      // ((api.defaults.headers.common.authorization = `Bearer ${data.accessToken}`),
-      toast.success("Usuário logado com Sucesso!");
+      ((api.defaults.headers.common.authorization = `Bearer ${data.accessToken}`),
+      toast.success("Usuário logado com Sucesso!"));
 
     return data;
   } catch (error) {

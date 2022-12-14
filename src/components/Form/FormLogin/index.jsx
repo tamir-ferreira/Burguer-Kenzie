@@ -36,7 +36,7 @@ export const FormLogin = () => {
   }; */
 
   const teste = async (data) => {
-    console.log(data);
+    // console.log(data);
     await loginSubmit(data);
   };
 

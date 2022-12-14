@@ -1,4 +1,7 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { api, getProducts } from "../services/api";
+import { UserContext } from "./UserContext";
 
 export const ProductContext = createContext({});
 
@@ -11,16 +14,41 @@ export const ProductContext = createContext({});
 } */
 
 export const ProductProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [wordSearch, setWordSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [cartList, setCartList] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   // const [products, setProducts] = useState<iProducts | []>([]);
   // const [filteredProducts, setFilteredProducts] = useState([]);
+  const { userInfo, setLoadUser } = useContext(UserContext);
 
-  /*  useEffect(() => {
-    getProducts(setProducts);
-  }, []); */
+  useEffect(() => {
+    const loadProducts = async () => {
+      console.log("montagem");
+      const token = localStorage.getItem("@TOKEN");
+
+      if (!token) {
+        setLoadUser(false);
+        navigate("/");
+        return;
+      }
+      api.defaults.headers.common.authorization = `Bearer ${token}`;
+
+      const response = await getProducts();
+      console.log("resposta", response);
+
+      if (response) {
+        setProducts(response);
+        setLoadUser(false);
+        navigate("/dashboard");
+      } else {
+        localStorage.clear();
+      }
+    };
+
+    loadProducts();
+  }, [userInfo]);
 
   const cleanSearch = () => {
     setWordSearch("");

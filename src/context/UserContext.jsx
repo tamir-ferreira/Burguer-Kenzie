@@ -1,21 +1,32 @@
-import { createContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createUser, loginUser } from "../services/api";
+import { api, createUser, getProducts, loginUser } from "../services/api";
+import { ProductContext } from "./ProductContext";
 
 export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
+  const [loadUser, setLoadUser] = useState(true);
+  // const { setProducts } = useContext(ProductContext);
+  const [userInfo, setUserInfo] = useState(null);
 
   const loginSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
     const response = await loginUser(data);
     const { user, accessToken } = response;
+    console.log(user);
 
     if (response) {
       localStorage.setItem("@TOKEN", accessToken);
       localStorage.setItem("@USER", JSON.stringify(user));
-      navigate("/dashboard");
+      // api.defaults.headers.common.authorization = `Bearer ${token}`;
+      // const response = await getProducts()
+      setUserInfo(user);
+
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 2000);
     } else {
       localStorage.clear();
     }
@@ -33,8 +44,22 @@ export const UserProvider = ({ children }) => {
     response && navigate("/login");
   };
 
+  const logout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
+
   return (
-    <UserContext.Provider value={{ loginSubmit, registerSubmit }}>
+    <UserContext.Provider
+      value={{
+        userInfo,
+        loadUser,
+        setLoadUser,
+        loginSubmit,
+        registerSubmit,
+        logout,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

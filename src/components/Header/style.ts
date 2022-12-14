@@ -37,6 +37,15 @@ export const StyledHeader = styled.header`
           color: var(--color-white);
         }
       }
+      > button {
+        border: none;
+        background: none;
+        opacity: 0.5;
+        :hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+      }
     }
   }
 
