@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { DashboardPage } from "../pages/dashboard";
 import { LoginPage } from "../pages/login";
 import { RegisterPage } from "../pages/register";
+
 export const PageRoutes = () => {
   return (
     <Routes>

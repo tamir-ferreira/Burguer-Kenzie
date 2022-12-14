@@ -20,7 +20,7 @@ export const DashboardPage = () => {
       }
 
       const response = await getProducts();
-      console.log(response);
+
       setProducts(response);
     };
 

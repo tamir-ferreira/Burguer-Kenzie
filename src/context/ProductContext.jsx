@@ -1,5 +1,4 @@
-import { createContext, useEffect, useState } from "react";
-import { getProducts } from "../services/api";
+import { createContext, useState } from "react";
 
 export const ProductContext = createContext({});
 
@@ -12,6 +11,7 @@ export const ProductContext = createContext({});
 } */
 
 export const ProductProvider = ({ children }) => {
+  const [cartCounter, setCartCounter] = useState(0);
   const [wordSearch, setWordSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [cartList, setCartList] = useState([]);
@@ -23,9 +23,16 @@ export const ProductProvider = ({ children }) => {
     getProducts(setProducts);
   }, []); */
 
+  const cleanSearch = () => {
+    setWordSearch("");
+    setFilteredProducts([]);
+  };
+
   return (
     <ProductContext.Provider
       value={{
+        cartCounter,
+        setCartCounter,
         wordSearch,
         setWordSearch,
         products,
@@ -34,6 +41,7 @@ export const ProductProvider = ({ children }) => {
         setCartList,
         filteredProducts,
         setFilteredProducts,
+        cleanSearch,
       }}
     >
       {children}

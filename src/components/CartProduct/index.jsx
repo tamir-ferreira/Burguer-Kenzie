@@ -1,11 +1,15 @@
+import { useContext } from "react";
+import { ProductContext } from "../../context/ProductContext";
 import { StyledCartProduct } from "./style";
 
-export const CartProduct = ({ item, cartList, setCartList }) => {
+export const CartProduct = ({ item }) => {
+  const { setCartCounter, cartList, setCartList } = useContext(ProductContext);
   const { img, name, category } = item;
 
   const removeItem = () => {
     const updatedList = cartList.filter((product) => product.id != item.id);
     setCartList(updatedList);
+    setCartCounter(updatedList.length);
   };
   return (
     <StyledCartProduct>

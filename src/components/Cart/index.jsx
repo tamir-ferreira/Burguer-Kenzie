@@ -5,8 +5,8 @@ import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 
 export const Cart = () => {
-  const { cartList, setCartList } = useContext(ProductContext);
-  console.log(cartList);
+  const { cartList } = useContext(ProductContext);
+
   return (
     <StyledCart>
       <div>
@@ -20,20 +20,11 @@ export const Cart = () => {
       ) : (
         <ul>
           {cartList.map((item) => (
-            <CartProduct
-              key={item.id}
-              item={item}
-              cartList={cartList}
-              setCartList={setCartList}
-            />
+            <CartProduct key={item.id} item={item} />
           ))}
         </ul>
       )}
-      {cartList.length ? (
-        <CartTotal setCartList={setCartList} cartList={cartList} />
-      ) : (
-        ""
-      )}
+      {cartList.length ? <CartTotal /> : ""}
     </StyledCart>
   );
 };

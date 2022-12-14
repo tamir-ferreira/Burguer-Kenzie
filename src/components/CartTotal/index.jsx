@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import { ProductContext } from "../../context/ProductContext";
 import { Button } from "../Button";
 import { StyledCartTotal } from "./style";
 
-export const CartTotal = ({ setCartList, cartList }) => {
+export const CartTotal = () => {
+  const { cartList, setCartList } = useContext(ProductContext);
   const cartSum = cartList.reduce((acc, current) => acc + current.price, 0);
   const formatedTotal = cartSum.toLocaleString("pt-br", {
     style: "currency",

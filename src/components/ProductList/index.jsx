@@ -5,13 +5,7 @@ import { Products } from "../Products";
 import { StyledProductList } from "./style";
 
 export const ProductList = ({ products }) => {
-  const {
-    wordSearch,
-    setWordSearch,
-    cartList,
-    setCartList,
-    setFilteredProducts,
-  } = useContext(ProductContext);
+  const { wordSearch, cleanSearch } = useContext(ProductContext);
   return (
     <StyledProductList>
       {wordSearch && (
@@ -23,21 +17,13 @@ export const ProductList = ({ products }) => {
             size="medium"
             color="primary"
             content="Limpar busca"
-            onClick={() => {
-              setWordSearch("");
-              setFilteredProducts([]);
-            }}
+            onClick={() => cleanSearch()}
           />
         </div>
       )}
       <ul>
         {products.map((product) => (
-          <Products
-            key={product.id}
-            product={product}
-            cartList={cartList}
-            setCartList={setCartList}
-          />
+          <Products key={product.id} product={product} />
         ))}
       </ul>
     </StyledProductList>

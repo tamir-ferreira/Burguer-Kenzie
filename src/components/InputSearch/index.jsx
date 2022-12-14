@@ -1,6 +1,8 @@
 import { StyledInputSearch } from "./style";
 import { toast } from "react-toastify";
 import { useRef } from "react";
+import { Button } from "../Button";
+import { ImSearch } from "react-icons/im";
 
 export const InputSearch = ({
   setWordSearch,
@@ -49,7 +51,8 @@ export const InputSearch = ({
         onChange={(event) => hideResults(event)}
         required
       />
-      <button className="btn-medium btn-primary">Pesquisar</button>
+      <Button size="medium" color="primary" content={<ImSearch size={18} />} />
+      {/* <button className="btn-medium btn-primary">Pesquisar</button> */}
     </StyledInputSearch>
   );
 };

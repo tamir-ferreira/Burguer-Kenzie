@@ -12,6 +12,32 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+
+      > div {
+        position: relative;
+
+        > span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 24px;
+
+          position: absolute;
+          right: -15px;
+          top: -15px;
+          background-color: var(--color-primary);
+          font-weight: var(--font-weigth-1);
+          border-radius: var(--border-radius-1);
+          color: var(--color-white);
+        }
+      }
+    }
   }
 
   @media only screen and (max-width: 37.5rem) {

@@ -1,8 +1,11 @@
 import { StyledProducts } from "./style";
 import { toast } from "react-toastify";
 import { Button } from "../Button";
+import { useContext } from "react";
+import { ProductContext } from "../../context/ProductContext";
 
-export const Products = ({ product, cartList, setCartList }) => {
+export const Products = ({ product }) => {
+  const { setCartCounter, cartList, setCartList } = useContext(ProductContext);
   const { img, name, category, price } = product;
   const formatedPrice = price.toLocaleString("pt-br", {
     style: "currency",
@@ -13,6 +16,7 @@ export const Products = ({ product, cartList, setCartList }) => {
 
     if (!duplicatedItem) {
       setCartList([...cartList, product]);
+      setCartCounter(cartList.length);
       toast.success("Enviado para o carrinho!");
     } else {
       toast.error("Produto já está no carrinho!");
