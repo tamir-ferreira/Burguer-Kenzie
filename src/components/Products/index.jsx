@@ -16,7 +16,7 @@ export const Products = ({ product }) => {
 
     if (!duplicatedItem) {
       setCartList([...cartList, product]);
-      setCartCounter(cartList.length);
+      setCartCounter(cartList.length + 1);
       toast.success("Enviado para o carrinho!");
     } else {
       toast.error("Produto já está no carrinho!");
