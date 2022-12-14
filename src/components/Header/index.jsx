@@ -7,8 +7,13 @@ import { FaShoppingCart } from "react-icons/fa";
 import { TbLogout } from "react-icons/tb";
 
 export const Header = () => {
-  const { setWordSearch, products, setFilteredProducts, cartCounter } =
-    useContext(ProductContext);
+  const {
+    setWordSearch,
+    products,
+    setFilteredProducts,
+    cartList,
+    // cartCounter,
+  } = useContext(ProductContext);
   return (
     <StyledHeader>
       <div className="container">
@@ -21,7 +26,7 @@ export const Header = () => {
           />
           <div>
             <FaShoppingCart size={25} color={"var(--color-gray-50)"} />
-            <span>{cartCounter}</span>
+            <span>{cartList.length}</span>
           </div>
           <TbLogout size={25} color={"var(--color-gray-50)"} />
         </div>

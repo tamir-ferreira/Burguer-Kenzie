@@ -5,11 +5,15 @@ import { StyledCartTotal } from "./style";
 
 export const CartTotal = () => {
   const { cartList, setCartList } = useContext(ProductContext);
-  const cartSum = cartList.reduce((acc, current) => acc + current.price, 0);
+  const cartSum = cartList.reduce(
+    (acc, current) => acc + current.price * current.quantity,
+    0
+  );
   const formatedTotal = cartSum.toLocaleString("pt-br", {
     style: "currency",
     currency: "BRL",
   });
+
   return (
     <StyledCartTotal>
       <div>

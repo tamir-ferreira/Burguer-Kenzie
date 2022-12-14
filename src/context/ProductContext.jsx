@@ -11,7 +11,7 @@ export const ProductContext = createContext({});
 } */
 
 export const ProductProvider = ({ children }) => {
-  const [cartCounter, setCartCounter] = useState(0);
+  // const [cartCounter, setCartCounter] = useState(0);
   const [wordSearch, setWordSearch] = useState("");
   const [products, setProducts] = useState([]);
   const [cartList, setCartList] = useState([]);
@@ -31,8 +31,8 @@ export const ProductProvider = ({ children }) => {
   return (
     <ProductContext.Provider
       value={{
-        cartCounter,
-        setCartCounter,
+        // cartCounter,
+        // setCartCounter,
         wordSearch,
         setWordSearch,
         products,

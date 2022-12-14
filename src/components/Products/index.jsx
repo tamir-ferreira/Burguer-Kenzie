@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContext";
 
 export const Products = ({ product }) => {
-  const { setCartCounter, cartList, setCartList } = useContext(ProductContext);
+  const { cartList, setCartList } = useContext(ProductContext);
   const { img, name, category, price } = product;
   const formatedPrice = price.toLocaleString("pt-br", {
     style: "currency",
@@ -13,10 +13,16 @@ export const Products = ({ product }) => {
   });
   const addProduct = () => {
     const duplicatedItem = cartList.some((item) => item.id === product.id);
-
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      img: product.img,
+      category: product.category,
+      price: product.price,
+      quantity: 1,
+    };
     if (!duplicatedItem) {
-      setCartList([...cartList, product]);
-      setCartCounter(cartList.length + 1);
+      setCartList([...cartList, newProduct]);
       toast.success("Enviado para o carrinho!");
     } else {
       toast.error("Produto já está no carrinho!");

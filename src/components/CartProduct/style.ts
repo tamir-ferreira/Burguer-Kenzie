@@ -11,7 +11,7 @@ export const StyledCartProduct = styled.li`
   animation: in-cart 0.5s ease-in-out;
 
   :hover {
-    box-shadow: 0 0 0.9375rem var(--color-gray-50);
+    box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
   }
 
   > div:first-child {
@@ -29,20 +29,54 @@ export const StyledCartProduct = styled.li`
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0.625rem 0 0 0.625rem;
+    padding-left: 0.625rem;
     gap: 0.625rem;
     text-align: left;
     align-items: flex-start;
+    justify-content: space-between;
+    /* background-color: red; */
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid var(--color-gray-20);
+      width: 106px;
+      height: 30px;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        color: var(--color-secondary);
+        border: none;
+        background-color: var(--color-gray-20);
+        height: 100%;
+        width: 30px;
+
+        :hover {
+          cursor: pointer;
+          background-color: var(--color-gray-50);
+        }
+      }
+    }
   }
 
   > button {
     position: absolute;
     top: 0.625rem;
     right: 0.625rem;
+    background: none;
+    border: none;
 
-    :hover {
-      cursor: pointer;
-      text-decoration: underline;
+    svg {
+      opacity: 0.4;
+
+      :hover {
+        cursor: pointer;
+        opacity: 1;
+      }
     }
   }
 

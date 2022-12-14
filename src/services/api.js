@@ -13,7 +13,7 @@ export const api = axios.create({
 export const getProducts = async () => {
   try {
     const { data } = await api.get("/products");
-
+    // console.log(data);
     return data;
   } catch (error) {
     console.error(error);
