@@ -67,7 +67,15 @@ export const StyledGlobals = createGlobalStyle`
     width: 100%;
     max-width: 85.625rem;
     margin: 0 auto;
-      }
+  }
+  
+  fieldset > input.input-error{
+    border-color: var(--color-negative);
+    :focus{
+      border-color: var(--color-negative);
+
+    }
+  }
 
   @media only screen and (max-width: 37.5rem) {
     main{

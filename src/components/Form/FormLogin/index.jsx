@@ -44,7 +44,7 @@ export const FormLogin = () => {
     <StyledForm onSubmit={handleSubmit(teste)} noValidate>
       <h3 className="font-heading-3">Login</h3>
       <Input
-        type="email"
+        type="text"
         name="Email"
         register={register("email")}
         error={errors.email?.message}

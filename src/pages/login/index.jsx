@@ -6,6 +6,7 @@ import { UserContext } from "../../context/UserContext";
 
 export const LoginPage = () => {
   const { loadUser } = useContext(UserContext);
+
   if (loadUser) {
     return (
       <div className="container-loader2">

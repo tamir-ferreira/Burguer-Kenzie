@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
   padding: 26px 24px;
   width: 500px;
   border: 2px solid var(--color-gray-20);

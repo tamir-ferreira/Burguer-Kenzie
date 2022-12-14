@@ -35,7 +35,7 @@ export const FormRegister = () => {
         error={errors.name?.message}
       />
       <Input
-        type="email"
+        type="text"
         name="Email"
         register={register("email")}
         error={errors.email?.message}
