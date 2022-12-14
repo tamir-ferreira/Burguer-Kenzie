@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Cart } from "../../components/Cart";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
@@ -8,6 +9,7 @@ import { api, getProducts } from "../../services/api";
 export const DashboardPage = () => {
   const { products, setProducts, filteredProducts } =
     useContext(ProductContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadProducts = async () => {
@@ -21,7 +23,7 @@ export const DashboardPage = () => {
 
       const response = await getProducts();
 
-      setProducts(response);
+      response ? setProducts(response) : (navigate("/"), localStorage.clear());
     };
 
     loadProducts();

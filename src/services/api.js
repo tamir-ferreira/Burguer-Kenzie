@@ -16,7 +16,11 @@ export const getProducts = async () => {
     // console.log(data);
     return data;
   } catch (error) {
-    console.error(error);
+    const message = error.response.data;
+    console.error(message);
+    message === "jwt expired" &&
+      toast.error("Token espirado! Faça Login novamente!");
+    return false;
   }
 };
 
