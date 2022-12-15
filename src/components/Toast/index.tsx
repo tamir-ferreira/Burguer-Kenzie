@@ -9,7 +9,7 @@ export const Toast = () => {
       newestOnTop={false}
       rtl={false}
       draggable={false}
-      theme="colored"
+      theme="dark"
     />
   );
 };

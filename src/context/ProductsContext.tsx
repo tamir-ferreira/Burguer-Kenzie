@@ -2,26 +2,17 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, getProducts } from "../services/api";
 import { UserContext } from "./UserContext";
+import * as i from "./interfaces/ProductsInterfaces";
 
-export const ProductContext = createContext({});
+export const ProductsContext = createContext({});
 
-/* export interface iProducts {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  img: string;
-} */
-
-export const ProductProvider = ({ children }) => {
+export const ProductsProvider = ({ children }: i.ProductProvider) => {
   const navigate = useNavigate();
   const [wordSearch, setWordSearch] = useState("");
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<i.Products | []>([]);
   const [cartList, setCartList] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  // const [showProducts, setShowProducts] = useState([]);
-  // const [products, setProducts] = useState<iProducts | []>([]);
-  // const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState<i.Products | []>([]);
+
   const { userInfo, setLoadUser } = useContext(UserContext);
 
   useEffect(() => {
@@ -57,7 +48,7 @@ export const ProductProvider = ({ children }) => {
   };
 
   return (
-    <ProductContext.Provider
+    <ProductsContext.Provider
       value={{
         wordSearch,
         setWordSearch,
@@ -71,6 +62,6 @@ export const ProductProvider = ({ children }) => {
       }}
     >
       {children}
-    </ProductContext.Provider>
+    </ProductsContext.Provider>
   );
 };

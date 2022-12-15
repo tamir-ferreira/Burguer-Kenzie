@@ -2,10 +2,10 @@ import { CartTotal } from "../CartTotal";
 import { CartProduct } from "../CartProduct";
 import { StyledCart } from "./style";
 import { useContext } from "react";
-import { ProductContext } from "../../context/ProductsContext";
+import { ProductsContext } from "../../context/ProductsContext";
 
 export const Cart = () => {
-  const { cartList } = useContext(ProductContext);
+  const { cartList } = useContext(ProductsContext);
 
   return (
     <StyledCart>

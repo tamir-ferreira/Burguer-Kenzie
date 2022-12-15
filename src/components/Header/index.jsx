@@ -1,6 +1,6 @@
 import logo from "../../images/logo.svg";
 import { useContext } from "react";
-import { ProductContext } from "../../context/ProductsContext";
+import { ProductsContext } from "../../context/ProductsContext";
 import { InputSearch } from "../InputSearch";
 import { StyledHeader } from "./style";
 import { FaShoppingCart } from "react-icons/fa";
@@ -15,7 +15,7 @@ export const Header = () => {
     setFilteredProducts,
     cartList,
     // cartCounter,
-  } = useContext(ProductContext);
+  } = useContext(ProductsContext);
   return (
     <StyledHeader>
       <div className="container">

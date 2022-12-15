@@ -1,4 +1,4 @@
-export interface UserContextProvider {
+export interface UserProvider {
   children: React.ReactNode;
 }
 

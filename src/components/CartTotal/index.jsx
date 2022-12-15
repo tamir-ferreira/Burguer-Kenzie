@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { ProductContext } from "../../context/ProductsContext";
+import { ProductsContext } from "../../context/ProductsContext";
 import { Button } from "../Button";
 import { StyledCartTotal } from "./style";
 
 export const CartTotal = () => {
-  const { cartList, setCartList } = useContext(ProductContext);
+  const { cartList, setCartList } = useContext(ProductsContext);
   const cartSum = cartList.reduce(
     (acc, current) => acc + current.price * current.quantity,
     0

@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { ProductContext } from "../../context/ProductsContext";
+import { ProductsContext } from "../../context/ProductsContext";
 import { Button } from "../Button";
 import { Products } from "../Products";
 import { StyledProductList } from "./style";
 
 export const ProductList = ({ products }) => {
-  const { wordSearch, cleanSearch } = useContext(ProductContext);
+  const { wordSearch, cleanSearch } = useContext(ProductsContext);
   return (
     <StyledProductList>
       {wordSearch && (

@@ -5,7 +5,7 @@ import * as i from "./interfaces/UserInterfaces";
 
 export const UserContext = createContext({} as i.UserContext);
 
-export const UserProvider = ({ children }: i.UserContextProvider) => {
+export const UserProvider = ({ children }: i.UserProvider) => {
   const navigate = useNavigate();
   const [loadUser, setLoadUser] = useState(true);
   const [userInfo, setUserInfo] = useState(null);

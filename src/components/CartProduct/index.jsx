@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { FaTrash } from "react-icons/fa";
-import { ProductContext } from "../../context/ProductsContext";
+import { ProductsContext } from "../../context/ProductsContext";
 import { StyledCartProduct } from "./style";
 
 export const CartProduct = ({ item }) => {
-  const { cartList, setCartList } = useContext(ProductContext);
+  const { cartList, setCartList } = useContext(ProductsContext);
   const { id, name, img, quantity } = item;
 
   const removeItem = () => {
