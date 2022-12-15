@@ -11,6 +11,7 @@ export const Products = ({ product }) => {
     style: "currency",
     currency: "BRL",
   });
+
   const addProduct = () => {
     const duplicatedItem = cartList.some((item) => item.id === product.id);
     const newProduct = {
@@ -21,6 +22,7 @@ export const Products = ({ product }) => {
       price: product.price,
       quantity: 1,
     };
+
     if (!duplicatedItem) {
       setCartList([...cartList, newProduct]);
       toast.success("Enviado para o carrinho!");

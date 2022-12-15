@@ -19,6 +19,7 @@ export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [cartList, setCartList] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  // const [showProducts, setShowProducts] = useState([]);
   // const [products, setProducts] = useState<iProducts | []>([]);
   // const [filteredProducts, setFilteredProducts] = useState([]);
   const { userInfo, setLoadUser } = useContext(UserContext);

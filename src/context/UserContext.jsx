@@ -8,11 +8,9 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
   const [loadUser, setLoadUser] = useState(true);
-  // const { setProducts } = useContext(ProductContext);
   const [userInfo, setUserInfo] = useState(null);
 
   const loginSubmit = async (data) => {
-    // console.log(data);
     const response = await loginUser(data);
     const { user, accessToken } = response;
     console.log(user);
@@ -20,8 +18,6 @@ export const UserProvider = ({ children }) => {
     if (response) {
       localStorage.setItem("@TOKEN", accessToken);
       localStorage.setItem("@USER", JSON.stringify(user));
-      // api.defaults.headers.common.authorization = `Bearer ${token}`;
-      // const response = await getProducts()
       setUserInfo(user);
 
       setTimeout(() => {

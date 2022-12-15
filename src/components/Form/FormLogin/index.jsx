@@ -11,7 +11,6 @@ import { loginUser } from "../../../services/api";
 
 export const FormLogin = () => {
   const { loginSubmit } = useContext(UserContext);
-  // const navigate = useNavigate();
 
   const {
     register,
@@ -22,26 +21,13 @@ export const FormLogin = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  /* const loginSubmit = async (data) => {
-    const response = await loginUser(data);
-
-    if (response) {
-      const { user, accessToken } = response;
-      localStorage.setItem("@TOKEN", accessToken);
-      localStorage.setItem("@USER", JSON.stringify(user));
-      navigate("/dashboard");
-    } else {
-      localStorage.clear();
-    }
+  /* const teste = async (data) => {
+    
+    await loginSubmit(data);
   }; */
 
-  const teste = async (data) => {
-    // console.log(data);
-    await loginSubmit(data);
-  };
-
   return (
-    <StyledForm onSubmit={handleSubmit(teste)} noValidate>
+    <StyledForm onSubmit={handleSubmit(loginSubmit)} noValidate>
       <h3 className="font-heading-3">Login</h3>
       <Input
         type="text"
