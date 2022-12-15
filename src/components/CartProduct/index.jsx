@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FaTrash } from "react-icons/fa";
-import { ProductContext } from "../../context/ProductContext";
+import { ProductContext } from "../../context/ProductsContext";
 import { StyledCartProduct } from "./style";
 
 export const CartProduct = ({ item }) => {

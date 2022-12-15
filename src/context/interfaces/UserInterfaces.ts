@@ -1,0 +1,35 @@
+export interface UserContextProvider {
+  children: React.ReactNode;
+}
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+interface UserInfo {
+  accessToken: string;
+  user: User;
+}
+
+export interface UserContext {
+  userInfo: null | UserInfo;
+  loadUser: boolean;
+  setLoadUser: React.Dispatch<React.SetStateAction<boolean>>;
+  loginSubmit: (data: DataLogin) => void;
+  registerSubmit: (data: DataRegister) => void;
+  logout: () => void;
+}
+
+export interface DataLogin {
+  email: string;
+  password: string;
+}
+
+export interface DataRegister {
+  email: string;
+  name: string;
+  password: string;
+  rePassword: string;
+}

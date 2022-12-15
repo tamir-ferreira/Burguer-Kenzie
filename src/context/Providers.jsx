@@ -1,4 +1,4 @@
-import { ProductProvider } from "./ProductContext";
+import { ProductProvider } from "./ProductsContext";
 import { UserProvider } from "./UserContext";
 
 export const Providers = ({ children }) => {

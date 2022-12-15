@@ -2,7 +2,7 @@ import { StyledProducts } from "./style";
 import { toast } from "react-toastify";
 import { Button } from "../Button";
 import { useContext } from "react";
-import { ProductContext } from "../../context/ProductContext";
+import { ProductContext } from "../../context/ProductsContext";
 
 export const Products = ({ product }) => {
   const { cartList, setCartList } = useContext(ProductContext);

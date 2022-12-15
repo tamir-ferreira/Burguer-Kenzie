@@ -1,16 +1,16 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api, createUser, getProducts, loginUser } from "../services/api";
-import { ProductContext } from "./ProductContext";
+import { createUser, loginUser } from "../services/api";
+import * as i from "./interfaces/UserInterfaces";
 
-export const UserContext = createContext({});
+export const UserContext = createContext({} as i.UserContext);
 
-export const UserProvider = ({ children }) => {
+export const UserProvider = ({ children }: i.UserContextProvider) => {
   const navigate = useNavigate();
   const [loadUser, setLoadUser] = useState(true);
   const [userInfo, setUserInfo] = useState(null);
 
-  const loginSubmit = async (data) => {
+  const loginSubmit = async (data: i.DataLogin) => {
     const response = await loginUser(data);
     const { user, accessToken } = response;
     console.log(user);
@@ -28,7 +28,8 @@ export const UserProvider = ({ children }) => {
     }
   };
 
-  const registerSubmit = async (data) => {
+  const registerSubmit = async (data: i.DataRegister) => {
+    console.log(data);
     const body = {
       name: data.name,
       email: data.email,

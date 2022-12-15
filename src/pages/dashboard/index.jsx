@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Cart } from "../../components/Cart";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
-import { ProductContext } from "../../context/ProductContext";
+import { ProductContext } from "../../context/ProductsContext";
 import { UserContext } from "../../context/UserContext";
 
 export const DashboardPage = () => {
