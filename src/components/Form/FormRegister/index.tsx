@@ -7,6 +7,7 @@ import { StyledForm } from "../style";
 import { registerSchema } from "./registerSchema";
 import { useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
+import * as i from "../../../interfaces/UserInterfaces";
 
 export const FormRegister = () => {
   const { registerSubmit } = useContext(UserContext);
@@ -15,7 +16,7 @@ export const FormRegister = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<i.DataRegister>({
     mode: "onChange",
     resolver: yupResolver(registerSchema),
   });

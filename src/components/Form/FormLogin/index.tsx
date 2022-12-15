@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button } from "../../Button";
@@ -7,7 +7,7 @@ import { StyledForm } from "../style";
 import { loginSchema } from "./loginSchema";
 import { useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
-import { loginUser } from "../../../services/api";
+import * as i from "../../../interfaces/UserInterfaces";
 
 export const FormLogin = () => {
   const { loginSubmit } = useContext(UserContext);
@@ -16,15 +16,10 @@ export const FormLogin = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<i.DataLogin>({
     mode: "onChange",
     resolver: yupResolver(loginSchema),
   });
-
-  /* const teste = async (data) => {
-    
-    await loginSubmit(data);
-  }; */
 
   return (
     <StyledForm onSubmit={handleSubmit(loginSubmit)} noValidate>
@@ -42,7 +37,7 @@ export const FormLogin = () => {
         register={register("password")}
         error={errors.password?.message}
       />
-      <Button type="submit" content="Logar" size="default" color="primary" />
+      <Button content="Logar" size="default" color="primary" />
 
       <p className="font-body">
         Crie sua conta para saborear muitas delícias e matar sua fome!

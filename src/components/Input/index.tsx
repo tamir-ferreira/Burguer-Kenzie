@@ -1,15 +1,21 @@
 import { StyledInput } from "./style";
 
-export const Input = ({ type, name, register, error }) => {
+interface iInputProps {
+  type: string;
+  name: string;
+  register: object;
+  error: any; //-------------ERRO-------------- ///
+}
+
+export const Input = ({ type, name, register, error }: iInputProps) => {
   return (
     <StyledInput>
       <input
         className={error && "input-error"}
         type={type}
         {...register}
-        required="required"
+        required={true}
       />
-      {/* <legend className="caption">{name}</legend> */}
       <span>{name}</span>
       {error && (
         <p className="caption" aria-label="erro na validação do campo">

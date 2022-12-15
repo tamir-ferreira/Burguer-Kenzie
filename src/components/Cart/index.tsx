@@ -19,8 +19,8 @@ export const Cart = () => {
         </div>
       ) : (
         <ul>
-          {cartList.map((item) => (
-            <CartProduct key={item.id} item={item} />
+          {cartList.map((cartItem) => (
+            <CartProduct key={cartItem.id} item={cartItem} />
           ))}
         </ul>
       )}

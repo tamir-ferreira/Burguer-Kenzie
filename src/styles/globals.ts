@@ -76,16 +76,7 @@ export const StyledGlobals = createGlobalStyle`
 
     }
   }
-
-  @media only screen and (max-width: 37.5rem) {
-    main{
-      width: 100%;
-      padding: 1rem;
-      flex-direction: column;
-      text-align: center;
-    }
-  }
-
+  
   @keyframes anim-adjust-img {
     0% {
       transform: scale(1) translateY(-0.625rem);
@@ -97,12 +88,12 @@ export const StyledGlobals = createGlobalStyle`
     100% {
       transform: scale(1) translateY(-0.625rem);
     }
-  
+    
   }
   @keyframes anim-resize-img {
     0% {
       transform: scale(1.5) translateY(-1.25rem);
-     
+      
     }
     50% {
       transform: scale(1.8) translateY(-1.25rem);
@@ -111,15 +102,25 @@ export const StyledGlobals = createGlobalStyle`
       transform: scale(1.5) translateY(-1.25rem);
     }
   }
+    
+  @media only screen and (max-width: 37.5rem) {
+    main{
+      width: 100%;
+      padding: 1rem;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
 
+  
   /* ---------- LOADER PÁGINAS ------------ */
-.container-loader2{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+  /* .container-loader2{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
 .loader2 {
   width: 78px;
   height: 78px;
@@ -149,9 +150,9 @@ export const StyledGlobals = createGlobalStyle`
   100% {
     transform: rotate(360deg);
   }
-} 
+}  */
 
-  ::-webkit-scrollbar-track { background-color: var(--color-gray-20) }
-  ::-webkit-scrollbar { width: .4375rem; height: .4375rem;}
-  ::-webkit-scrollbar-thumb { background: var(--color-primary-50); border-radius: var(--border-radius-1)}
+::-webkit-scrollbar-track { background-color: var(--color-gray-20) }
+::-webkit-scrollbar { width: .4375rem; height: .4375rem;}
+::-webkit-scrollbar-thumb { background: var(--color-primary-50); border-radius: var(--border-radius-1)}
 `;

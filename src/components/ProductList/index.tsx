@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { ProductsContext } from "../../context/ProductsContext";
 import { Button } from "../Button";
 import { Products } from "../Products";
 import { StyledProductList } from "./style";
+import { ProductsContext } from "../../context/ProductsContext";
+import * as i from "../../interfaces/ProductsInterfaces";
 
-export const ProductList = ({ products }) => {
+export const ProductList = ({ products }: i.ProductList) => {
   const { wordSearch, cleanSearch } = useContext(ProductsContext);
   return (
     <StyledProductList>

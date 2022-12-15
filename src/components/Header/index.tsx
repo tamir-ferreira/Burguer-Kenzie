@@ -9,23 +9,14 @@ import { UserContext } from "../../context/UserContext";
 
 export const Header = () => {
   const { logout } = useContext(UserContext);
-  const {
-    setWordSearch,
-    products,
-    setFilteredProducts,
-    cartList,
-    // cartCounter,
-  } = useContext(ProductsContext);
+  const { cartList } = useContext(ProductsContext);
+
   return (
     <StyledHeader>
       <div className="container">
         <img src={logo} alt="logomarca Burguer Kenzie" />
         <div>
-          <InputSearch
-            setWordSearch={setWordSearch}
-            products={products}
-            setFilteredProducts={setFilteredProducts}
-          />
+          <InputSearch />
           <div>
             <FaShoppingCart size={25} color={"var(--color-gray-50)"} />
             <span>{cartList.length}</span>

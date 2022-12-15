@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
 // import { iProducts } from "../App";
 
@@ -7,18 +7,21 @@ export const api = axios.create({
   timeout: 5000,
 });
 
+interface iDefaultErrorResponse {
+  error: string;
+}
 /* export const getProducts = async (
   setProducts: React.Dispatch<React.SetStateAction<iProducts | []>>
 ) => { */
 export const getProducts = async () => {
   try {
     const { data } = await api.get("/products");
-    // console.log(data);
+
     return data;
   } catch (error) {
-    const message = error.response.data;
-    console.error(message);
-    message === "jwt expired" &&
+    const message = error as AxiosError<iDefaultErrorResponse>;
+
+    message.response?.data.error === "jwt expired" &&
       toast.error("Token espirado! Faça Login novamente!");
     return false;
   }
@@ -32,9 +35,10 @@ export const createUser = async (body) => {
 
     return data;
   } catch (error) {
-    const message = error.response.data;
+    const message = error as AxiosError<iDefaultErrorResponse>;
 
-    message === "Email already exists" && toast.error("E-mail já existe!");
+    message.response?.data.error === "Email already exists" &&
+      toast.error("E-mail já existe!");
     return false;
   }
 };
@@ -49,9 +53,12 @@ export const loginUser = async (body) => {
 
     return data;
   } catch (error) {
-    const message = error.response.data;
-    message === "Incorrect password" && toast.error("Senha inválida!");
-    message === "Cannot find user" && toast.error("Usuário não encontrado!");
+    const message = error as AxiosError<iDefaultErrorResponse>;
+
+    message.response?.data.error === "Incorrect password" &&
+      toast.error("Senha inválida!");
+    message.response?.data.error === "Cannot find user" &&
+      toast.error("Usuário não encontrado!");
     return false;
   }
 };

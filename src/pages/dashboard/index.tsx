@@ -1,28 +1,29 @@
 import { useContext } from "react";
 import { Cart } from "../../components/Cart";
 import { Header } from "../../components/Header";
+import { Loader } from "../../components/Loader";
 import { ProductList } from "../../components/ProductList";
 import { ProductsContext } from "../../context/ProductsContext";
 import { UserContext } from "../../context/UserContext";
+import { StyledDashboard } from "./style";
 
 export const DashboardPage = () => {
   const { loadUser } = useContext(UserContext);
-  const { products, filteredProducts, setShowProducts } =
-    useContext(ProductsContext);
+  const { products, filteredProducts } = useContext(ProductsContext);
 
   return !loadUser ? (
     <>
       <Header />
-      <main className={"container"}>
+      <StyledDashboard>
         <ProductList
           products={filteredProducts.length != 0 ? filteredProducts : products}
         />
         <Cart />
-      </main>
+      </StyledDashboard>
     </>
   ) : (
-    <div className="container-loader2">
-      <span className="loader2"></span>
-    </div>
+    <>
+      <Loader />
+    </>
   );
 };

@@ -1,15 +1,15 @@
 import { StyledInputSearch } from "./style";
 import { toast } from "react-toastify";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { Button } from "../Button";
 import { ImSearch } from "react-icons/im";
+import { ProductsContext } from "../../context/ProductsContext";
 
-export const InputSearch = ({
-  setWordSearch,
-  products,
-  setFilteredProducts,
-}) => {
+export const InputSearch = () => {
+  const { setWordSearch, products, setFilteredProducts } =
+    useContext(ProductsContext);
   const formRef = useRef(null);
+
   const findProduct = (event) => {
     event.preventDefault();
     const search = event.target[0].value.toLowerCase();
@@ -52,7 +52,6 @@ export const InputSearch = ({
         required
       />
       <Button size="medium" color="primary" content={<ImSearch size={18} />} />
-      {/* <button className="btn-medium btn-primary">Pesquisar</button> */}
     </StyledInputSearch>
   );
 };

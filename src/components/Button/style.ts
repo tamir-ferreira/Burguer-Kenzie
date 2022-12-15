@@ -1,4 +1,16 @@
-import styled, { css } from "styled-components";
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
+
+interface iStyledButtonProps {
+  size: "default" | "medium";
+  color: "primary" | "gray";
+}
+
+/* interface iVariantsProps {
+  default: any;
+  medium: any;
+  primary: any;
+  gray: any;
+} */
 
 const buttonVariants = {
   default: css`
@@ -37,7 +49,7 @@ const buttonVariants = {
   `,
 };
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<iStyledButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;

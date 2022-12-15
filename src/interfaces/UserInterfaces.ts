@@ -31,5 +31,5 @@ export interface DataRegister {
   email: string;
   name: string;
   password: string;
-  rePassword: string;
+  rePassword?: string;
 }

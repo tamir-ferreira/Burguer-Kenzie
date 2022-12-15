@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { Button } from "../Button";
 import { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
+import * as i from "../../interfaces/ProductsInterfaces";
 
 export const Products = ({ product }) => {
   const { cartList, setCartList } = useContext(ProductsContext);
