@@ -5,22 +5,22 @@ import { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
 import * as i from "../../interfaces/ProductsInterfaces";
 
-export const Products = ({ product }) => {
+export const Products = ({ products }: i.ProductList) => {
   const { cartList, setCartList } = useContext(ProductsContext);
-  const { img, name, category, price } = product;
+  const { id, name, img, category, price } = products;
   const formatedPrice = price.toLocaleString("pt-br", {
     style: "currency",
     currency: "BRL",
   });
 
   const addProduct = () => {
-    const duplicatedItem = cartList.some((item) => item.id === product.id);
+    const duplicatedItem = cartList.some((item) => item.id === products.id);
     const newProduct = {
-      id: product.id,
-      name: product.name,
-      img: product.img,
-      category: product.category,
-      price: product.price,
+      id: id,
+      name: name,
+      img: img,
+      category: category,
+      price: price,
       quantity: 1,
     };
 

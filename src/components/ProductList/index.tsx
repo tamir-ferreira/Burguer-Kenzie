@@ -5,7 +5,7 @@ import { StyledProductList } from "./style";
 import { ProductsContext } from "../../context/ProductsContext";
 import * as i from "../../interfaces/ProductsInterfaces";
 
-export const ProductList = ({ products }: i.ProductList) => {
+export const ProductList = ({ products }: i.ProductArrayList) => {
   const { wordSearch, cleanSearch } = useContext(ProductsContext);
   return (
     <StyledProductList>
@@ -24,7 +24,7 @@ export const ProductList = ({ products }: i.ProductList) => {
       )}
       <ul>
         {products.map((product) => (
-          <Products key={product.id} product={product} />
+          <Products key={product.id} products={product} />
         ))}
       </ul>
     </StyledProductList>

@@ -4,12 +4,12 @@ import { StyledCartProduct } from "./style";
 import { ProductsContext } from "../../context/ProductsContext";
 import * as i from "../../interfaces/ProductsInterfaces";
 
-export const CartProduct = ({ item }: i.CartList) => {
+export const CartProduct = ({ cartItem }: i.CartList) => {
   const { cartList, setCartList } = useContext(ProductsContext);
-  const { id, name, img, quantity } = item;
+  const { id, name, img, quantity } = cartItem;
 
   const removeItem = () => {
-    const updatedList = cartList.filter((product) => product.id != item.id);
+    const updatedList = cartList.filter((item) => item.id != cartItem.id);
     setCartList(updatedList);
   };
 
@@ -19,7 +19,7 @@ export const CartProduct = ({ item }: i.CartList) => {
         item.quantity += 1;
       }
     });
-    const updateList = cartList.map((product) => product);
+    const updateList = cartList.map((item) => item);
     setCartList(updateList);
   };
 
@@ -29,7 +29,7 @@ export const CartProduct = ({ item }: i.CartList) => {
         item.quantity -= 1;
       }
     });
-    const updateList = cartList.map((product) => product);
+    const updateList = cartList.map((item) => item);
     setCartList(updateList);
   };
 

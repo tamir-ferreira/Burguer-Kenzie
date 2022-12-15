@@ -4,7 +4,7 @@ interface iInputProps {
   type: string;
   name: string;
   register: object;
-  error: any; //-------------ERRO-------------- ///
+  error: string | undefined;
 }
 
 export const Input = ({ type, name, register, error }: iInputProps) => {

@@ -1,6 +1,6 @@
+import React, { useContext } from "react";
 import { StyledInputSearch } from "./style";
 import { toast } from "react-toastify";
-import { useContext, useRef } from "react";
 import { Button } from "../Button";
 import { ImSearch } from "react-icons/im";
 import { ProductsContext } from "../../context/ProductsContext";
@@ -8,9 +8,8 @@ import { ProductsContext } from "../../context/ProductsContext";
 export const InputSearch = () => {
   const { setWordSearch, products, setFilteredProducts } =
     useContext(ProductsContext);
-  const formRef = useRef(null);
 
-  const findProduct = (event) => {
+  const findProduct = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const search = event.target[0].value.toLowerCase();
 
@@ -32,9 +31,10 @@ export const InputSearch = () => {
       setWordSearch("");
       toast.error(`Nenhum produto encontrado com "${search}" !`);
     }
+    event.target[0].value = "";
   };
 
-  const hideResults = (event) => {
+  const hideResults = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!event.target.value) {
       setWordSearch("");
       setFilteredProducts([]);
@@ -42,12 +42,10 @@ export const InputSearch = () => {
   };
 
   return (
-    <StyledInputSearch ref={formRef} onSubmit={(event) => findProduct(event)}>
+    <StyledInputSearch onSubmit={(event) => findProduct(event)}>
       <input
         type="text"
         placeholder="Digitar Pesquisa"
-        onFocus={() => formRef.current.classList.add("input-focus")}
-        onBlur={() => formRef.current.classList.remove("input-focus")}
         onChange={(event) => hideResults(event)}
         required
       />

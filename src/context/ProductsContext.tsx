@@ -10,7 +10,7 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
   const navigate = useNavigate();
   const [wordSearch, setWordSearch] = useState("");
   const [products, setProducts] = useState<i.Products[] | []>([]);
-  const [cartList, setCartList] = useState<i.CartList[] | []>([]);
+  const [cartList, setCartList] = useState<i.CartItem[] | []>([]);
   const [filteredProducts, setFilteredProducts] = useState<i.Products[] | []>(
     []
   );

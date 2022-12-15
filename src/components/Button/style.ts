@@ -1,16 +1,9 @@
-import styled, { css, FlattenSimpleInterpolation } from "styled-components";
+import styled, { css } from "styled-components";
 
 interface iStyledButtonProps {
   size: "default" | "medium";
   color: "primary" | "gray";
 }
-
-/* interface iVariantsProps {
-  default: any;
-  medium: any;
-  primary: any;
-  gray: any;
-} */
 
 const buttonVariants = {
   default: css`

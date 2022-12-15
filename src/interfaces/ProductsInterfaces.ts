@@ -13,6 +13,10 @@ export interface Products {
 }
 
 export interface ProductList {
+  products: Products;
+}
+
+export interface ProductArrayList {
   products: Products[];
 }
 
@@ -26,7 +30,7 @@ export interface CartItem {
 }
 
 export interface CartList {
-  item: CartItem;
+  cartItem: CartItem;
 }
 
 export interface ProductsContext {

@@ -34,7 +34,6 @@ export const StyledCartProduct = styled.li`
     text-align: left;
     align-items: flex-start;
     justify-content: space-between;
-    /* background-color: red; */
 
     > div {
       display: flex;

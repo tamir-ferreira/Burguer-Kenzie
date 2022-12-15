@@ -8,8 +8,8 @@ export const StyledInput = styled.fieldset`
   flex-direction: column;
   gap: 3px;
   border: none;
-
   position: relative;
+
   input {
     font-size: 1.1rem;
     width: 100%;
@@ -20,16 +20,12 @@ export const StyledInput = styled.fieldset`
     border-radius: var(--border-radius-1);
     transition: 0.4s ease;
 
-    /* :valid {
-      border: 2px solid green;
-    } */
     :focus {
       border-color: var(--color-success);
     }
 
     :valid ~ span,
     :focus ~ span {
-      /* color: red; */
       transform: translateX(10px) translateY(-10px);
       font-size: 0.9rem;
       padding: 0 10px;
