@@ -1,6 +1,7 @@
+import { DataLogin } from "./../interfaces/UserInterfaces";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
-// import { iProducts } from "../App";
+import * as i from "../interfaces/UserInterfaces";
 
 export const api = axios.create({
   baseURL: "https://hamburgueria-kenzie-v2.herokuapp.com",
@@ -27,7 +28,7 @@ export const getProducts = async () => {
   }
 };
 
-export const createUser = async (body) => {
+export const createUser = async (body: i.DataRegister) => {
   try {
     const { data, status } = await api.post("/users", body);
 
@@ -43,7 +44,7 @@ export const createUser = async (body) => {
   }
 };
 
-export const loginUser = async (body) => {
+export const loginUser = async (body: i.DataLogin) => {
   try {
     const { status, data } = await api.post("/login", body);
 
