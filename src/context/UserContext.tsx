@@ -9,6 +9,7 @@ export const UserProvider = ({ children }: i.UserProvider) => {
   const navigate = useNavigate();
   const [loadUser, setLoadUser] = useState(true);
   const [userInfo, setUserInfo] = useState(null);
+  const [showPass, setShowPass] = useState(false);
 
   const loginSubmit = async (data: i.DataLogin) => {
     const response = await loginUser(data);
@@ -54,6 +55,8 @@ export const UserProvider = ({ children }: i.UserProvider) => {
         loginSubmit,
         registerSubmit,
         logout,
+        showPass,
+        setShowPass,
       }}
     >
       {children}

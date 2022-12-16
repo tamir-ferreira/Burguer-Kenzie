@@ -20,6 +20,8 @@ export interface UserContext {
   loginSubmit: (data: DataLogin) => void;
   registerSubmit: (data: DataRegister) => void;
   logout: () => void;
+  showPass: boolean;
+  setShowPass: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface DataLogin {

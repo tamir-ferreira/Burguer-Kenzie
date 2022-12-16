@@ -5,11 +5,19 @@ interface iInputProps {
   name: string;
   register: object;
   error: string | undefined;
+  children?: React.ReactNode;
 }
 
-export const Input = ({ type, name, register, error }: iInputProps) => {
+export const Input = ({
+  children,
+  type,
+  name,
+  register,
+  error,
+}: iInputProps) => {
   return (
     <StyledInput>
+      {children}
       <input
         className={error && "input-error"}
         type={type}

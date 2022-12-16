@@ -20,6 +20,11 @@ export const StyledInput = styled.fieldset`
     border-radius: var(--border-radius-1);
     transition: 0.4s ease;
 
+    :-webkit-autofill,
+    :-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
+
     :focus {
       border-color: var(--color-success);
     }
@@ -30,6 +35,16 @@ export const StyledInput = styled.fieldset`
       font-size: 0.9rem;
       padding: 0 10px;
       background-color: var(--color-white);
+    }
+  }
+
+  > svg {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--color-gray-50);
+    :hover {
+      cursor: pointer;
     }
   }
 
