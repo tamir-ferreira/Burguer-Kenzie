@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
 import { Button } from "../Button";
 import { StyledCartTotal } from "./style";
+import * as i from "../../interfaces/ProductsInterfaces";
 
 export const CartTotal = () => {
-  const { cartList, setCartList } = useContext(ProductsContext);
+  const { cartList, setCartList, setShowCart } = useContext(ProductsContext);
   const cartSum = cartList.reduce(
     (acc, current) => acc + current.price * current.quantity,
     0
@@ -13,6 +14,11 @@ export const CartTotal = () => {
     style: "currency",
     currency: "BRL",
   });
+
+  const cleanCart = () => {
+    setCartList([]);
+    setShowCart(false);
+  };
 
   return (
     <StyledCartTotal>
@@ -24,7 +30,7 @@ export const CartTotal = () => {
         size="default"
         color="gray"
         content="Remover Todos"
-        onClick={() => setCartList([])}
+        onClick={() => cleanCart()}
       />
     </StyledCartTotal>
   );

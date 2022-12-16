@@ -6,4 +6,12 @@ export const StyledLogin = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 37.5rem) {
+    padding-top: 30px;
+    width: 100%;
+    flex-direction: column-reverse;
+    height: 100%;
+    gap: 14px;
+  }
 `;

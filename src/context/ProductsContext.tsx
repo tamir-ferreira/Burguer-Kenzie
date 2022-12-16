@@ -10,10 +10,11 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
   const navigate = useNavigate();
   const [wordSearch, setWordSearch] = useState("");
   const [products, setProducts] = useState<i.Products[] | []>([]);
-  const [cartList, setCartList] = useState<i.CartItem[] | []>([]);
+  const [cartList, setCartList] = useState([] as i.CartItem[]);
   const [filteredProducts, setFilteredProducts] = useState<i.Products[] | []>(
     []
   );
+  const [showCart, setShowCart] = useState(false);
 
   const { userInfo, setLoadUser } = useContext(UserContext);
 
@@ -29,7 +30,6 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
       api.defaults.headers.common.authorization = `Bearer ${token}`;
 
       const response = await getProducts();
-      console.log("resposta", response);
 
       if (response) {
         setProducts(response);
@@ -60,6 +60,8 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
         filteredProducts,
         setFilteredProducts,
         cleanSearch,
+        showCart,
+        setShowCart,
       }}
     >
       {children}

@@ -4,14 +4,20 @@ import { toast } from "react-toastify";
 import { Button } from "../Button";
 import { ImSearch } from "react-icons/im";
 import { ProductsContext } from "../../context/ProductsContext";
+import { useForm } from "react-hook-form";
+
+interface iOnSubmit {
+  search: string;
+}
 
 export const InputSearch = () => {
   const { setWordSearch, products, setFilteredProducts } =
     useContext(ProductsContext);
 
-  const findProduct = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const search = event.target[0].value.toLowerCase();
+  const { register, handleSubmit, reset } = useForm<iOnSubmit>({});
+
+  const findProduct = (data: iOnSubmit) => {
+    const search = data.search.toLowerCase();
 
     const filteredList = products.filter((item) => {
       return (
@@ -31,7 +37,10 @@ export const InputSearch = () => {
       setWordSearch("");
       toast.error(`Nenhum produto encontrado com "${search}" !`);
     }
-    event.target[0].value = "";
+
+    reset({
+      search: "",
+    });
   };
 
   const hideResults = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,11 +51,11 @@ export const InputSearch = () => {
   };
 
   return (
-    <StyledInputSearch onSubmit={(event) => findProduct(event)}>
+    <StyledInputSearch onSubmit={handleSubmit(findProduct)}>
       <input
         type="text"
         placeholder="Digitar Pesquisa"
-        onChange={(event) => hideResults(event)}
+        {...register("search")}
         required
       />
       <Button size="medium" color="primary" content={<ImSearch size={18} />} />

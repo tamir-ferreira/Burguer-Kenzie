@@ -9,7 +9,7 @@ import { UserContext } from "../../context/UserContext";
 
 export const Header = () => {
   const { logout } = useContext(UserContext);
-  const { cartList } = useContext(ProductsContext);
+  const { cartList, showCart, setShowCart } = useContext(ProductsContext);
 
   return (
     <StyledHeader>
@@ -18,12 +18,16 @@ export const Header = () => {
         <div>
           <InputSearch />
           <div>
-            <FaShoppingCart size={25} color={"var(--color-gray-50)"} />
-            <span>{cartList.length}</span>
+            <div>
+              <button onClick={() => setShowCart(!showCart)}>
+                <FaShoppingCart size={25} color={"var(--color-gray-50)"} />
+              </button>
+              <span>{cartList.length}</span>
+            </div>
+            <button onClick={() => logout()}>
+              <TbLogout size={30} color={"var(--color-gray-100)"} />
+            </button>
           </div>
-          <button onClick={() => logout()}>
-            <TbLogout size={30} color={"var(--color-gray-100)"} />
-          </button>
         </div>
       </div>
     </StyledHeader>

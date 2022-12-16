@@ -13,7 +13,6 @@ export const UserProvider = ({ children }: i.UserProvider) => {
   const loginSubmit = async (data: i.DataLogin) => {
     const response = await loginUser(data);
     const { user, accessToken } = response;
-    console.log(user);
 
     if (response) {
       localStorage.setItem("@TOKEN", accessToken);

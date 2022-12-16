@@ -1,5 +1,3 @@
-// import { Products } from './../context/interfaces/ProductsInterfaces';
-// import { ProductList } from './../components/ProductList/index';
 export interface ProductsProvider {
   children: React.ReactNode;
 }
@@ -33,14 +31,20 @@ export interface CartList {
   cartItem: CartItem;
 }
 
+export interface CartArrayList {
+  cartItem: CartItem[];
+}
+
 export interface ProductsContext {
   wordSearch: string;
   setWordSearch: React.Dispatch<React.SetStateAction<string>>;
   products: Products[] | [];
   setProducts: React.Dispatch<React.SetStateAction<Products[] | []>>;
-  cartList: CartItem[] | [];
+  cartList: CartItem[];
   setCartList: React.Dispatch<React.SetStateAction<CartItem[] | []>>;
   filteredProducts: Products[] | [];
   setFilteredProducts: React.Dispatch<React.SetStateAction<Products[] | []>>;
   cleanSearch: () => void;
+  showCart: boolean;
+  setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
 }

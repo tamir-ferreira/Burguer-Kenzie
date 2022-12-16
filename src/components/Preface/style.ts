@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledPreface = styled.section`
-  width: 377px;
-
+  max-width: 377px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -19,9 +19,18 @@ export const StyledPreface = styled.section`
     align-items: center;
     padding: 17px 14px;
     color: var(--color-gray-50);
+    /* background-color: red; */
+
+    p {
+      text-align: left;
+    }
 
     strong {
       color: var(--color-gray-100);
     }
+  }
+  > img:last-child {
+    /* background-color: red; */
+    display: none;
   }
 `;

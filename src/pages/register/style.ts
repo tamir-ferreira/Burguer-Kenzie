@@ -7,4 +7,18 @@ export const StyledRegister = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 37.5rem) {
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    gap: 30px;
+    padding-top: 30px;
+
+    section {
+      div {
+        display: none;
+      }
+    }
+  }
 `;

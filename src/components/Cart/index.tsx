@@ -1,30 +1,42 @@
 import { CartTotal } from "../CartTotal";
 import { CartProduct } from "../CartProduct";
 import { StyledCart } from "./style";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
+import { AnimSlideDown } from "../../animation";
 
 export const Cart = () => {
-  const { cartList } = useContext(ProductsContext);
+  const { cartList, showCart } = useContext(ProductsContext);
+  useEffect(() => {
+    console.log("montagem");
 
-  return (
+    return () => {
+      console.log("desmontagem");
+    };
+  }, [showCart]);
+
+  return showCart ? (
     <StyledCart>
-      <div>
-        <h4>Carrinho de compras</h4>
-      </div>
-      {!cartList.length ? (
+      <AnimSlideDown>
         <div>
-          <h3>Sua sacola está vazia</h3>
-          <p>Adicione itens</p>
+          <h4>Carrinho de compras</h4>
         </div>
-      ) : (
-        <ul>
-          {cartList.map((cartItem) => (
-            <CartProduct key={cartItem.id} cartItem={cartItem} />
-          ))}
-        </ul>
-      )}
-      {cartList.length ? <CartTotal /> : ""}
+        {!cartList.length ? (
+          <div>
+            <h3>Sua sacola está vazia</h3>
+            <p>Adicione itens</p>
+          </div>
+        ) : (
+          <ul>
+            {cartList.map((cartItem) => (
+              <CartProduct key={cartItem.id} cartItem={cartItem} />
+            ))}
+          </ul>
+        )}
+        {cartList.length ? <CartTotal /> : ""}
+      </AnimSlideDown>
     </StyledCart>
+  ) : (
+    <></>
   );
 };

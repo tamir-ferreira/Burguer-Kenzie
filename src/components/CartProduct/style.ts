@@ -40,6 +40,7 @@ export const StyledCartProduct = styled.li`
       justify-content: space-between;
       align-items: center;
       border: 1px solid var(--color-gray-20);
+      border-radius: var(--border-radius-2);
       width: 106px;
       height: 30px;
 
@@ -51,6 +52,7 @@ export const StyledCartProduct = styled.li`
         color: var(--color-secondary);
         border: none;
         background-color: var(--color-gray-20);
+        border-radius: var(--border-radius-2);
         height: 100%;
         width: 30px;
 
