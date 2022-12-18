@@ -11,11 +11,11 @@ export const api = axios.create({
 export const getProducts = async () => {
   try {
     const { data } = await api.get("/products");
+    console.log(data);
 
     return data;
   } catch (error) {
     const message = error as AxiosError<string>;
-
     message.response?.data === "jwt expired" &&
       toast.error("Token espirado! Faça Login novamente!");
     return false;
@@ -45,7 +45,7 @@ export const loginUser = async (body: i.DataLogin) => {
     status === 200 &&
       ((api.defaults.headers.common.authorization = `Bearer ${data.accessToken}`),
       toast.success("Usuário logado com Sucesso!"));
-
+    console.log(data);
     return data;
   } catch (error) {
     const message = error as AxiosError<string>;

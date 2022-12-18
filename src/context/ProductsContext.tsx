@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, getProducts } from "../services/api";
 import { UserContext } from "./UserContext";
+import { toast } from "react-toastify";
 import * as i from "../interfaces/ProductsInterfaces";
 
 export const ProductsContext = createContext({} as i.ProductsContext);
@@ -15,6 +16,7 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
     []
   );
   const [showCart, setShowCart] = useState(false);
+  // const [isClosing, setIsClosing] = useState(false);
 
   const { userInfo, setLoadUser } = useContext(UserContext);
 
@@ -33,11 +35,13 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
 
       if (response) {
         setProducts(response);
-        setLoadUser(false);
         navigate("/dashboard");
       } else {
         localStorage.clear();
+        navigate("/");
+        toast.error("Token inválido!");
       }
+      setLoadUser(false);
     };
 
     loadProducts();
@@ -62,6 +66,8 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
         cleanSearch,
         showCart,
         setShowCart,
+        // isClosing,
+        // setIsClosing,
       }}
     >
       {children}

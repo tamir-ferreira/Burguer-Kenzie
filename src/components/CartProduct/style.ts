@@ -1,3 +1,4 @@
+import { Button } from "./../Button/index";
 import styled from "styled-components";
 
 export const StyledCartProduct = styled.li`
@@ -8,7 +9,7 @@ export const StyledCartProduct = styled.li`
   align-items: flex-start;
   position: relative;
   border-radius: var(--border-radius-1);
-  animation: in-cart 0.5s ease-in-out;
+  /* animation: in-cart 0.5s ease-in-out; */
 
   :hover {
     box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
@@ -42,23 +43,26 @@ export const StyledCartProduct = styled.li`
       border: 1px solid var(--color-gray-20);
       border-radius: var(--border-radius-2);
       width: 106px;
-      height: 30px;
+      height: 25px;
 
       button {
         display: flex;
+        transform: translateY();
         align-items: center;
         justify-content: center;
         font-size: 25px;
         color: var(--color-secondary);
         border: none;
         background-color: var(--color-gray-20);
-        border-radius: var(--border-radius-2);
         height: 100%;
         width: 30px;
+        padding-bottom: 3px;
 
         :hover {
           cursor: pointer;
+          color: var(--color-gray-0);
           background-color: var(--color-gray-50);
+          border-radius: var(--border-radius-2);
         }
       }
     }

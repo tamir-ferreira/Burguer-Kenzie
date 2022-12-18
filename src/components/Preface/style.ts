@@ -29,8 +29,9 @@ export const StyledPreface = styled.section`
       color: var(--color-gray-100);
     }
   }
-  > img:last-child {
-    /* background-color: red; */
-    display: none;
+  @media only screen and (max-width: 37.5rem) {
+    img:last-child {
+      display: none;
+    }
   }
 `;

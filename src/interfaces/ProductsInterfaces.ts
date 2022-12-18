@@ -47,4 +47,6 @@ export interface ProductsContext {
   cleanSearch: () => void;
   showCart: boolean;
   setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
+  // isClosing: boolean;
+  // setIsClosing: React.Dispatch<React.SetStateAction<boolean>>;
 }

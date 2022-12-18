@@ -4,9 +4,6 @@ export const StyledDashboard = styled.main`
   max-width: 85.625rem;
   margin: 0 auto;
   margin-top: 100px;
-  > div {
-    background-color: red;
-  }
 
   @media only screen and (max-width: 37.5rem) {
     margin-top: 150px;

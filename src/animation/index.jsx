@@ -1,10 +1,31 @@
 import { motion } from "framer-motion";
+import { keyframes } from "styled-components";
+
+export const AnimationOpen = keyframes`
+  from{
+    transform: translateY(-100vh);
+  }
+
+  to{
+    transform: translateY(0);
+  }
+`;
+
+export const AnimationClose = keyframes`
+  from{
+    transform: translateY(0);
+  }
+
+  to{
+    transform: translateY(-100vh);
+  }
+`;
 
 export const AnimBlur = ({ children }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    transition={{ duration: 2 }}
+    transition={{ duration: 2.5 }}
   >
     {children}
   </motion.div>
@@ -45,19 +66,19 @@ export const AnimSlideRight = ({ children, delay }) => (
 
 export const AnimSlideDown = ({ children, delay = 0 }) => (
   <motion.div
-    initial={{ translateY: "-100vh" }}
-    animate={{ translateY: 0 }}
-    transition={{ duration: 1.2, delay: delay, ease: "easeInOut" }}
+    initial={{ translateY: "-100vh", opacity: 0 }}
+    animate={{ translateY: 0, opacity: 1 }}
+    transition={{ duration: 1, delay: delay, ease: "easeInOut" }}
   >
     {children}
   </motion.div>
 );
 
-export const AnimSlideUp = ({ children, delay }) => (
+export const AnimSlideUp = ({ children, delay = 0 }) => (
   <motion.div
-    initial={{ translateY: "150vh" }}
-    animate={{ translateY: 0 }}
-    transition={{ duration: 0.5, delay: delay, ease: "easeInOut" }}
+    initial={{ translateY: 0, opacity: 0.3 }}
+    animate={{ translateY: `-150vh`, opacity: 0 }}
+    transition={{ duration: 1, delay: delay, ease: "easeInOut" }}
   >
     {children}
   </motion.div>
