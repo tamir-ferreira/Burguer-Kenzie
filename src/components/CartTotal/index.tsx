@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
 import { Button } from "../Button";
 import { StyledCartTotal } from "./style";
-import * as i from "../../interfaces/ProductsInterfaces";
 
 export const CartTotal = () => {
   const { cartList, setCartList, setShowCart } = useContext(ProductsContext);

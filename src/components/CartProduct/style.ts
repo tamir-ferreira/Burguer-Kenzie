@@ -1,4 +1,3 @@
-import { Button } from "./../Button/index";
 import styled from "styled-components";
 
 export const StyledCartProduct = styled.li`
@@ -9,7 +8,7 @@ export const StyledCartProduct = styled.li`
   align-items: flex-start;
   position: relative;
   border-radius: var(--border-radius-1);
-  /* animation: in-cart 0.5s ease-in-out; */
+  animation: in-cart 0.5s ease-in-out;
 
   :hover {
     box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);

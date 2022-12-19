@@ -65,8 +65,6 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
         cleanSearch,
         showCart,
         setShowCart,
-        // isClosing,
-        // setIsClosing,
       }}
     >
       {children}

@@ -1,19 +1,12 @@
 import { CartTotal } from "../CartTotal";
 import { CartProduct } from "../CartProduct";
 import { StyledCart } from "./style";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
 import { AnimSlideDown } from "../../animation";
 
 export const Cart = () => {
   const { cartList, showCart } = useContext(ProductsContext);
-  useEffect(() => {
-    console.log("montagem");
-
-    return () => {
-      console.log("desmontagem");
-    };
-  }, [showCart]);
 
   return showCart ? (
     <StyledCart>
