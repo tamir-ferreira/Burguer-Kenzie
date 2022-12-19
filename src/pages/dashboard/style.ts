@@ -6,7 +6,7 @@ export const StyledDashboard = styled.main`
   margin-top: 100px;
 
   @media only screen and (max-width: 37.5rem) {
+    margin: 0;
     margin-top: 150px;
-    width: 95vw;
   }
 `;

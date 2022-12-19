@@ -41,9 +41,14 @@ export const StyledCart = styled.aside`
       padding: 1.25rem 0.625rem;
       overflow-y: auto;
     }
-
-    @media only screen and (max-width: 37.5rem) {
-      width: 100%;
+  }
+  @media only screen and (max-width: 37.5rem) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    > div {
+      width: 90%;
       transform: translateY(-450px);
       position: fixed;
       top: 0;
