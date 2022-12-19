@@ -16,7 +16,6 @@ export const ProductsProvider = ({ children }: i.ProductsProvider) => {
     []
   );
   const [showCart, setShowCart] = useState(false);
-  // const [isClosing, setIsClosing] = useState(false);
 
   const { userInfo, setLoadUser } = useContext(UserContext);
 

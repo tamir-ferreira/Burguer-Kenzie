@@ -1,4 +1,3 @@
-import { DataLogin } from "./../interfaces/UserInterfaces";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import * as i from "../interfaces/UserInterfaces";

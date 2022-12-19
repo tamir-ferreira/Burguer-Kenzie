@@ -4,8 +4,8 @@ export const StyledForm = styled.form`
   flex-direction: column;
   gap: 25px;
   padding: 26px 24px;
-  width: 100%;
-  max-width: 500px;
+
+  width: 500px;
   border: 2px solid var(--color-gray-20);
   box-shadow: 0px 0px 30px -20px rgba(0, 0, 0, 0.25);
   border-radius: var(--border-radius-2);
@@ -32,6 +32,7 @@ export const StyledForm = styled.form`
   }
 
   @media only screen and (max-width: 37.5rem) {
+    width: 100%;
     padding: 26px 15px;
   }
 `;

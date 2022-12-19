@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AnimBlur, AnimSlideDown, AnimSlideUp } from "../../animation";
+import { AnimSlideDown } from "../../animation";
 import { Cart } from "../../components/Cart";
 import { Header } from "../../components/Header";
 import { Loader } from "../../components/Loader";
@@ -10,27 +10,22 @@ import { StyledDashboard } from "./style";
 
 export const DashboardPage = () => {
   const { loadUser } = useContext(UserContext);
-  const { products, filteredProducts, showCart } = useContext(ProductsContext);
+  const { products, filteredProducts } = useContext(ProductsContext);
 
   return !loadUser ? (
-    // <>
-    <AnimBlur>
+    <>
       <Header />
-      <StyledDashboard>
-        <ProductList
-          products={filteredProducts.length != 0 ? filteredProducts : products}
-        />
-        {showCart ? (
-          <AnimSlideDown>
-            <Cart />
-          </AnimSlideDown>
-        ) : (
-          <AnimSlideUp>
-            <Cart />
-          </AnimSlideUp>
-        )}
-      </StyledDashboard>
-    </AnimBlur>
+      <AnimSlideDown>
+        <StyledDashboard>
+          <ProductList
+            products={
+              filteredProducts.length != 0 ? filteredProducts : products
+            }
+          />
+          <Cart />
+        </StyledDashboard>
+      </AnimSlideDown>
+    </>
   ) : (
     <>
       <Loader />
