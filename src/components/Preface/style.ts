@@ -19,7 +19,6 @@ export const StyledPreface = styled.section`
     align-items: center;
     padding: 17px 14px;
     color: var(--color-gray-50);
-    /* background-color: red; */
 
     p {
       text-align: left;

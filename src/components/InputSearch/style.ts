@@ -6,10 +6,8 @@ export const StyledInputSearch = styled.form`
   align-items: center;
   width: 19rem;
   max-width: 22.8125rem;
-  /* border: 0.125rem solid var(--color-gray-20); */
   border-radius: var(--border-radius-1);
   background-color: var(--color-white);
-  /* padding: 0 0.625rem; */
   position: relative;
 
   input {

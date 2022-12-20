@@ -24,16 +24,11 @@ export const StyledHeader = styled.header`
       justify-content: center;
       gap: 35px;
 
-      /* background-color: red; */
-
       > div {
-        /* background-color: green; */
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 35px;
-
-        /* height: 100%; */
 
         > div {
           position: relative;
@@ -44,7 +39,6 @@ export const StyledHeader = styled.header`
             justify-content: center;
             width: 20px;
             height: 24px;
-
             position: absolute;
             right: -15px;
             top: -15px;
@@ -81,36 +75,32 @@ export const StyledHeader = styled.header`
 
   @media only screen and (max-width: 37.5rem) {
     height: auto;
-    /* position: relative; */
+
     > div {
       margin-top: 1.5625rem;
       width: 100%;
       align-items: center;
       flex-direction: column;
-      /* background-color: blue; */
+
       img {
         padding-left: 12px;
         align-self: flex-start;
-        /* border: 1px solid red; */
       }
+
       > div {
         display: flex;
         flex-direction: column-reverse;
 
         form {
-          /* position: unset; */
           padding: 0;
         }
 
         input {
           width: 100%;
-          /* background-color: green; */
         }
 
         > div {
           display: flex;
-          /* flex-direction: column; */
-          /* background-color: red; */
           position: absolute;
           right: 10px;
           top: 20px;

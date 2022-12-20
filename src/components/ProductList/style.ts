@@ -33,7 +33,6 @@ export const StyledProductList = styled.section`
     }
 
     ul {
-      /* background-color: red; */
       justify-content: space-between;
       flex-wrap: nowrap;
       overflow-x: auto;

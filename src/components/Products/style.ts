@@ -45,6 +45,7 @@ export const StyledProducts = styled.li`
       margin-top: 0.625rem;
     }
   }
+
   @keyframes img-pulse {
     0% {
       transform: scale(1);
