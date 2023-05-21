@@ -24,7 +24,7 @@ export const Input = ({
         {...register}
         required={true}
       />
-      <span>{name}</span>
+      <label>{name}</label>
       {error && (
         <p className="caption" aria-label="erro na validação do campo">
           {error}

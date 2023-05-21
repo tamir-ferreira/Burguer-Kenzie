@@ -29,13 +29,23 @@ export const StyledInput = styled.fieldset`
       border-color: var(--color-success);
     }
 
-    :valid ~ span,
-    :focus ~ span {
+    :valid ~ label,
+    :focus ~ label {
       transform: translateX(10px) translateY(-10px);
       font-size: 0.9rem;
       padding: 0 10px;
       background-color: var(--color-white);
     }
+  }
+
+  > label {
+    color: var(--color-gray-50);
+    pointer-events: none;
+    font-size: 1.1rem;
+    position: absolute;
+    left: 0;
+    padding: 18px;
+    transition: 0.4s ease;
   }
 
   > svg {
@@ -46,16 +56,6 @@ export const StyledInput = styled.fieldset`
     :hover {
       cursor: pointer;
     }
-  }
-
-  > span {
-    color: var(--color-gray-50);
-    pointer-events: none;
-    font-size: 1.1rem;
-    position: absolute;
-    left: 0;
-    padding: 18px;
-    transition: 0.4s ease;
   }
 
   > p {
